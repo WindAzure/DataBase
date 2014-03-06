@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DataBaseProject.Forms
+namespace DataBaseProject.Controls
 {
     /// <summary>
-    /// Interaction logic for LoginForm.xaml
+    /// Interaction logic for BackButton.xaml
     /// </summary>
-    public partial class LoginForm : UserControl
+    public partial class BackButton : UserControl
     {
-        public LoginForm()
+        public BackButton()
         {
             InitializeComponent();
         }

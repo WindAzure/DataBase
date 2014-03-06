@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBaseProject.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DataBaseProject.Forms
+namespace DataBaseProject
 {
     /// <summary>
-    /// Interaction logic for LoginForm.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginForm : UserControl
+    public partial class MainWindow : Window
     {
-        public LoginForm()
+        public MainWindow()
         {
             InitializeComponent();
+            PageSwitcher._maindow = this;
+            PageSwitcher.Switch(new LoginForm());
+        }
+
+        public void Navigate(UserControl control)
+        {
+            this.Content = control;
         }
     }
 }

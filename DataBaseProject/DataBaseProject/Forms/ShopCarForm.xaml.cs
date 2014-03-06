@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace DataBaseProject.Forms
@@ -17,7 +18,7 @@ namespace DataBaseProject.Forms
     /// <summary>
     /// Interaction logic for ShopCarForm.xaml
     /// </summary>
-    public partial class ShopCarForm : Window
+    public partial class ShopCarForm : UserControl
     {
         public ShopCarForm()
         {
