@@ -183,10 +183,56 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Image\1007147_00_main.jpg" />
-    <Resource Include="Image\20131212114942808.jpg" />
-    <Resource Include="Image\download.jpg" />
-    <Resource Include="Image\images.jpg" />
+    <Resource Include="Image\KindPicture\1007147_00_main.jpg" />
+    <Resource Include="Image\KindPicture\20131212114942808.jpg" />
+    <Resource Include="Image\KindPicture\download.jpg" />
+    <Resource Include="Image\KindPicture\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Black\pic1.png" />
+    <Resource Include="Image\Tea\Black\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Green\pic1.png" />
+    <Resource Include="Image\Tea\Green\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Greengage\pic1.png" />
+    <Resource Include="Image\Tea\Greengage\pic2.png" />
+    <Resource Include="Image\Tea\Greengage\pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Lemon\pic1.png" />
+    <Resource Include="Image\Tea\Lemon\pic2.png" />
+    <Resource Include="Image\Tea\Lemon\pic3.png" />
+    <Resource Include="Image\Tea\Lemon\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Matcha\pic1.png" />
+    <Resource Include="Image\Tea\Matcha\pic2.png" />
+    <Resource Include="Image\Tea\Matcha\pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Oolong\pic1.png" />
+    <Resource Include="Image\Tea\Oolong\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\PassionFruit\pic1.png" />
+    <Resource Include="Image\Tea\PassionFruit\pic2.png" />
+    <Resource Include="Image\Tea\PassionFruit\pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Puer\pic1.png" />
+    <Resource Include="Image\Tea\Puer\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Roselle\pic1.png" />
+    <Resource Include="Image\Tea\Roselle\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Yakult\pic1.png" />
+    <Resource Include="Image\Tea\Yakult\pic2.png" />
+    <Resource Include="Image\Tea\Yakult\pic3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
