@@ -51,6 +51,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +71,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Controls\BackButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DrinkLogo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Controls\BackButton.xaml.cs">
       <DependentUpon>BackButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DrinkLogo.xaml.cs">
+      <DependentUpon>DrinkLogo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrinkInfomationForm.xaml.cs">
       <DependentUpon>DrinkInfomationForm.xaml</DependentUpon>
