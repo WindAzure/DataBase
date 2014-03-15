@@ -1,5 +1,4 @@
-﻿using DataBaseProject.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DataBaseProject
+namespace DataBaseProject.Forms
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SpecialOfferDrinkListForm.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SpecialOfferDrinkListForm : UserControl
     {
-        public MainWindow()
+        public SpecialOfferDrinkListForm()
         {
             InitializeComponent();
-            PageSwitcher._maindow = this;
-            PageSwitcher.Switch(new DrinkInformationForm());
-        }
-
-        public void Navigate(UserControl control)
-        {
-            this.Content = control;
         }
     }
 }

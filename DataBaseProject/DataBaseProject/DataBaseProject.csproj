@@ -78,11 +78,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\DrinkInfomationForm.xaml">
+    <Page Include="Forms\DrinkInformationForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\DrinkListEditForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\DrinkOfJuiceListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\DrinkOfSmoothieListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\DrinkOfTeaListForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,6 +103,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\OrderListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\RecommendDrinkListForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,17 +128,29 @@
     <Compile Include="Controls\DrinkLogo.xaml.cs">
       <DependentUpon>DrinkLogo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DrinkInfomationForm.xaml.cs">
-      <DependentUpon>DrinkInfomationForm.xaml</DependentUpon>
+    <Compile Include="Forms\DrinkInformationForm.xaml.cs">
+      <DependentUpon>DrinkInformationForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrinkListEditForm.xaml.cs">
       <DependentUpon>DrinkListEditForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrinkOfJuiceListForm.xaml.cs">
+      <DependentUpon>DrinkOfJuiceListForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrinkOfSmoothieListForm.xaml.cs">
+      <DependentUpon>DrinkOfSmoothieListForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DrinkOfTeaListForm.xaml.cs">
+      <DependentUpon>DrinkOfTeaListForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoginForm.xaml.cs">
       <DependentUpon>LoginForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\OrderListForm.xaml.cs">
       <DependentUpon>OrderListForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RecommendDrinkListForm.xaml.cs">
+      <DependentUpon>RecommendDrinkListForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\RegistForm.xaml.cs">
       <DependentUpon>RegistForm.xaml</DependentUpon>
@@ -134,6 +162,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\SpecialOfferDrinkListForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +174,9 @@
   <ItemGroup>
     <Compile Include="Forms\ShopCarForm.xaml.cs">
       <DependentUpon>ShopCarForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpecialOfferDrinkListForm.xaml.cs">
+      <DependentUpon>SpecialOfferDrinkListForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

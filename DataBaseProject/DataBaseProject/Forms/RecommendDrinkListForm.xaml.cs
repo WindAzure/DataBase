@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace DataBaseProject.Forms
 {
     /// <summary>
-    /// Interaction logic for DrinkInfomationForm.xaml
+    /// Interaction logic for RecommendDrinkList.xaml
     /// </summary>
-    public partial class DrinkInfomationForm : UserControl
+    public partial class RecommendDrinkListForm : UserControl
     {
-        public DrinkInfomationForm()
+        public RecommendDrinkListForm()
         {
             InitializeComponent();
-        }
-
-        private void DrinkLogo_OnItemMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            PageSwitcher.Switch(new LoginForm());
         }
     }
 }
