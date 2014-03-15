@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Controls:DrinkLogo OnItemMouseUp="DrinkLogo_OnItemMouseUp"/>
+                <Controls:DrinkLogo OnItemMouseUp="DrinkLogo_OnItemMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
             </Grid>
 
             <Grid  Grid.Column="1">
@@ -34,8 +34,8 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="/Image/KindPicture/images.jpg" Stretch="Fill"/>
-                <Image Grid.Row="1" Source="/Image/KindPicture/images.jpg" Stretch="Fill"/>
+                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="DrinkLogo_OnItemMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="DrinkLogo_OnItemMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
             </Grid>
 
             <Grid  Grid.Column="2">
@@ -44,8 +44,8 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="/Image/KindPicture/images.jpg" Stretch="Fill"/>
-                <Image Grid.Row="1" Source="/Image/KindPicture/images.jpg" Stretch="Fill"/>
+                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="DrinkLogo_OnItemMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="DrinkLogo_OnItemMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
             </Grid>
 
         </Grid>

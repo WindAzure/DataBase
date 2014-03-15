@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
 
-    <Image Source="/Image/KindPicture/images.jpg" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseDown="Image_MouseDown" MouseUp="Image_MouseUp" MouseLeave="Image_MouseLeave" x:Name="img">
+    <Image Source="{Binding ImagePath}" Stretch="Fill" RenderTransformOrigin="0.5,0.5" MouseDown="Image_MouseDown" MouseUp="Image_MouseUp" MouseLeave="Image_MouseLeave" x:Name="img">
         <Image.RenderTransform>
             <ScaleTransform ScaleX="1" ScaleY="1"/>
         </Image.RenderTransform>

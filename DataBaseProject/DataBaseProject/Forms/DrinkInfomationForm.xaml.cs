@@ -28,7 +28,6 @@ namespace DataBaseProject.Forms
 
         private void DrinkLogo_OnItemMouseUp(object sender, MouseButtonEventArgs e)
         {
-
             PageSwitcher.Switch(new LoginForm());
         }
     }

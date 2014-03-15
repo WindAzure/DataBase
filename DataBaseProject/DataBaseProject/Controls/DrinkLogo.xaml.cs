@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -20,15 +21,40 @@ namespace DataBaseProject.Controls
     /// <summary>
     /// Interaction logic for DrinkLogo.xaml
     /// </summary>
-    public partial class DrinkLogo : UserControl
+    public partial class DrinkLogo : UserControl, INotifyPropertyChanged
     {
+        private String _imagePath = "";
         private bool _isPress = false;
         public delegate void DrinkLogoEvent(object sender, MouseButtonEventArgs e);
-        public event DrinkLogoEvent OnItemMouseUp=null;
+        public event DrinkLogoEvent OnItemMouseUp = null;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(String name)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public String ImagePath
+        {
+            set
+            {
+                _imagePath = value;
+                OnPropertyChanged("ImgagePath");
+            }
+            get
+            {
+                return _imagePath;
+            }
+        }
 
         public DrinkLogo()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void Zoom(double value)
