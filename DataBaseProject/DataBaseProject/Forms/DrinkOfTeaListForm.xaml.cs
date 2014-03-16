@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,11 @@ namespace DataBaseProject.Forms
         public DrinkOfTeaListForm()
         {
             InitializeComponent();
+        }
+
+        private void OnMouseWheelStackPanel(object sender, MouseWheelEventArgs e)
+        {
+            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset-e.Delta);
         }
     }
 }

@@ -248,12 +248,6 @@
     <Resource Include="Image\Tea\Greengage\pic3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Tea\Lemon\pic1.png" />
-    <Resource Include="Image\Tea\Lemon\pic2.png" />
-    <Resource Include="Image\Tea\Lemon\pic3.png" />
-    <Resource Include="Image\Tea\Lemon\pic4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\Tea\Matcha\pic1.png" />
     <Resource Include="Image\Tea\Matcha\pic2.png" />
     <Resource Include="Image\Tea\Matcha\pic3.png" />
