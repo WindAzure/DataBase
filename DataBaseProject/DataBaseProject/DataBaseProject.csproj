@@ -225,7 +225,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Tea\FrontCover.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\KindPicture\1007147_00_main.jpg" />
     <Resource Include="Image\KindPicture\20131212114942808.jpg" />
@@ -277,6 +279,118 @@
     <Resource Include="Image\Tea\Yakult\pic1.png" />
     <Resource Include="Image\Tea\Yakult\pic2.png" />
     <Resource Include="Image\Tea\Yakult\pic3.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Juice\FrontCover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Apple\pic1.png" />
+    <Resource Include="Image\Juice\Apple\pic2.png" />
+    <Resource Include="Image\Juice\Apple\pic3.png" />
+    <Resource Include="Image\Juice\Apple\pic4.png" />
+    <Resource Include="Image\Juice\Apple\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Banana\pic1.png" />
+    <Resource Include="Image\Juice\Banana\pic2.png" />
+    <Resource Include="Image\Juice\Banana\pic3.png" />
+    <Resource Include="Image\Juice\Banana\pic4.png" />
+    <Resource Include="Image\Juice\Banana\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Grape\pic1.png" />
+    <Resource Include="Image\Juice\Grape\pic2.png" />
+    <Resource Include="Image\Juice\Grape\pic3.png" />
+    <Resource Include="Image\Juice\Grape\pic4.png" />
+    <Resource Include="Image\Juice\Grape\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\GrapeFruit\pic1.png" />
+    <Resource Include="Image\Juice\GrapeFruit\pic2.png" />
+    <Resource Include="Image\Juice\GrapeFruit\pic3.png" />
+    <Resource Include="Image\Juice\GrapeFruit\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Guava\pic1.png" />
+    <Resource Include="Image\Juice\Guava\pic2.png" />
+    <Resource Include="Image\Juice\Guava\pic3.png" />
+    <Resource Include="Image\Juice\Guava\pic4.png" />
+    <Resource Include="Image\Juice\Guava\pic5.png" />
+    <Resource Include="Image\Juice\Guava\pic6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\KiwiFruit\pic1.png" />
+    <Resource Include="Image\Juice\KiwiFruit\pic2.png" />
+    <Resource Include="Image\Juice\KiwiFruit\pic3.png" />
+    <Resource Include="Image\Juice\KiwiFruit\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Orange\pic1.png" />
+    <Resource Include="Image\Juice\Orange\pic2.png" />
+    <Resource Include="Image\Juice\Orange\pic3.png" />
+    <Resource Include="Image\Juice\Orange\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Papaya\pic1.png" />
+    <Resource Include="Image\Juice\Papaya\pic2.png" />
+    <Resource Include="Image\Juice\Papaya\pic3.png" />
+    <Resource Include="Image\Juice\Papaya\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\PassionFruit\pic1.png" />
+    <Resource Include="Image\Juice\PassionFruit\pic2.png" />
+    <Resource Include="Image\Juice\PassionFruit\pic3.png" />
+    <Resource Include="Image\Juice\PassionFruit\pic4.png" />
+    <Resource Include="Image\Juice\PassionFruit\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Tomatoe\pic1.png" />
+    <Resource Include="Image\Juice\Tomatoe\pic2.png" />
+    <Resource Include="Image\Juice\Tomatoe\pic3.png" />
+    <Resource Include="Image\Juice\Tomatoe\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\WaterMelon\pic1.png" />
+    <Resource Include="Image\Juice\WaterMelon\pic2.png" />
+    <Resource Include="Image\Juice\WaterMelon\pic3.png" />
+    <Resource Include="Image\Juice\WaterMelon\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\FrontCover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\BlueBerry\pic1.png" />
+    <Resource Include="Image\Smoothie\BlueBerry\pic2.png" />
+    <Resource Include="Image\Smoothie\BlueBerry\pic3.png" />
+    <Resource Include="Image\Smoothie\BlueBerry\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\Mango\pic1.png" />
+    <Resource Include="Image\Smoothie\Mango\pic2.png" />
+    <Resource Include="Image\Smoothie\Mango\pic3.png" />
+    <Resource Include="Image\Smoothie\Mango\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\PassionFruit\pic1.png" />
+    <Resource Include="Image\Smoothie\PassionFruit\pic2.png" />
+    <Resource Include="Image\Smoothie\PassionFruit\pic3.png" />
+    <Resource Include="Image\Smoothie\PassionFruit\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\PineApple\pic1.png" />
+    <Resource Include="Image\Smoothie\PineApple\pic2.png" />
+    <Resource Include="Image\Smoothie\PineApple\pic3.png" />
+    <Resource Include="Image\Smoothie\PineApple\pic4.png" />
+    <Resource Include="Image\Smoothie\PineApple\pic5.png" />
+    <Resource Include="Image\Smoothie\PineApple\pic6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\WaterMelon\pic1.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic2.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic3.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic4.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

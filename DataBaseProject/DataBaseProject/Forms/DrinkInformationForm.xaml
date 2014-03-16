@@ -39,7 +39,7 @@
                 </Grid.RowDefinitions>
 
                 <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
-                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnTeaImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnTeaImageMouseUp" ImagePath="/Image/Tea/FrontCover.jpg"/>
             </Grid>
 
             <Grid  Grid.Column="2">
@@ -48,8 +48,8 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnJuiceImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
-                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnSmoothieImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnJuiceImageMouseUp" ImagePath="/Image/Juice/FrontCover.png"/>
+                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnSmoothieImageMouseUp" ImagePath="/Image/Smoothie/FrontCover.png"/>
             </Grid>
 
         </Grid>
