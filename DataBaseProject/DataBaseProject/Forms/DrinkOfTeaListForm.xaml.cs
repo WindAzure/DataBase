@@ -59,5 +59,11 @@ namespace DataBaseProject.Forms
         {
             PageSwitcher.Switch(new DrinkInformationForm());
         }
+
+        private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
+        {
+            DependencyObject oo = sender as DependencyObject;
+            Debug.WriteLine(oo.GetValue(FrameworkElement.NameProperty));
+        }
     }
 }

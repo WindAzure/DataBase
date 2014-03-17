@@ -24,7 +24,7 @@
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel">
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_redTeaGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -33,7 +33,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Black/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greenTeaGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -42,7 +42,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Green/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_matchaGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -51,7 +51,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Matcha/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_oolongGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -60,7 +60,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Oolong/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greengageGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -69,7 +69,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Greengage/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -78,7 +78,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_puerGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -87,7 +87,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Puer/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_roselleGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -96,7 +96,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Roselle/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_yakultGrid">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>

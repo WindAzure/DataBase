@@ -229,12 +229,6 @@
     <Resource Include="Image\Tea\FrontCover.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\KindPicture\1007147_00_main.jpg" />
-    <Resource Include="Image\KindPicture\20131212114942808.jpg" />
-    <Resource Include="Image\KindPicture\download.jpg" />
-    <Resource Include="Image\KindPicture\images.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\Tea\Black\pic1.png" />
     <Resource Include="Image\Tea\Black\pic2.png" />
   </ItemGroup>
