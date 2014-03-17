@@ -54,5 +54,10 @@ namespace DataBaseProject.Forms
         {
             _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset-e.Delta);
         }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            PageSwitcher.Switch(new DrinkInformationForm());
+        }
     }
 }

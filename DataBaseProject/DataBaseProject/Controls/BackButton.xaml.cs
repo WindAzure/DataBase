@@ -20,9 +20,20 @@ namespace DataBaseProject.Controls
     /// </summary>
     public partial class BackButton : UserControl
     {
+        public delegate void BackButtonEvent(Object sender, RoutedEventArgs e);
+        public event BackButtonEvent OnClick = null;
+
         public BackButton()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (OnClick != null)
+            {
+                OnClick(sender, e);
+            }
         }
     }
 }

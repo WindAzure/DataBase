@@ -71,5 +71,5 @@
         </Style>
     </UserControl.Resources>
     
-    <Button Style="{DynamicResource arrowBack}" SnapsToDevicePixels="True"/>
+    <Button Style="{DynamicResource arrowBack}" SnapsToDevicePixels="True" Click="Button_Click"/>
 </UserControl>
