@@ -268,7 +268,6 @@
     <Resource Include="Image\Tea\Yakult\pic2.png" />
     <Resource Include="Image\Tea\Yakult\pic3.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Image\Juice\FrontCover.png" />
   </ItemGroup>
@@ -347,6 +346,7 @@
   <ItemGroup>
     <Resource Include="Image\Smoothie\FrontCover.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Image\Smoothie\BlueBerry\pic1.png" />
     <Resource Include="Image\Smoothie\BlueBerry\pic2.png" />
