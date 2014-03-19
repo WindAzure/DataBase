@@ -23,8 +23,12 @@
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel">
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_redTeaGrid">
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_teaStackPanel">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_redTeaGrid">        
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -34,73 +38,113 @@
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_greenTeaGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="綠茶" Width="80" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Green/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_matchaGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="油切抹茶" Width="140" Padding="10,0,0,0"  Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Matcha/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_oolongGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="烏龍茶" Width="110" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Oolong/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_greengageGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="梅子綠茶" Width="140" Padding="10,0,0,0"  Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Greengage/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="百香果綠茶" Width="160" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_puerGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="普洱茶" Width="110" Padding="10,0,0,0"  Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Puer/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_roselleGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="洛神花茶" Width="140" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Roselle/pic1.png" Stretch="Fill"/>
                     </Grid>
 
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_yakultGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
+                        
                         <TextBlock Grid.Row="0" Text="多多綠茶" Width="140" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Tea/Yakult/pic1.png" Stretch="Fill"/>
                     </Grid>

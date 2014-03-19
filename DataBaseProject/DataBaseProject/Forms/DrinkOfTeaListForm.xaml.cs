@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -52,7 +53,7 @@ namespace DataBaseProject.Forms
 
         private void OnMouseWheelStackPanel(object sender, MouseWheelEventArgs e)
         {
-            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset-e.Delta);
+            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
         }
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
@@ -60,10 +61,42 @@ namespace DataBaseProject.Forms
             PageSwitcher.Switch(new DrinkInformationForm());
         }
 
+        public void ChangePosition(int activePos, double location)
+        {
+            UIElement item = _teaStackPanel.Children[activePos];
+            var loc = item.PointToScreen(new Point(0, 0));
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.Duration = TimeSpan.FromMilliseconds(200);
+            animation.To = location;
+
+            Storyboard story = new Storyboard();
+            story.Children.Add(animation);
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.X"));
+            Storyboard.SetTarget(animation, item);
+            story.Begin();
+        }
+
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
         {
-            DependencyObject oo = sender as DependencyObject;
-            Debug.WriteLine(oo.GetValue(FrameworkElement.NameProperty));
+            bool flag = false;
+            int length = _teaStackPanel.Children.Count;
+            for (int i = 0; i < length; i++)
+            {
+                UIElement item = _teaStackPanel.Children[i];
+                var loc = item.PointToScreen(new Point(0, 0));
+                if (item == sender)
+                {
+                    ChangePosition(i, 200 - loc.X);
+                    flag = true;
+                }
+                else
+                {
+                    if (!flag)
+                        ChangePosition(i, -loc.X - 1000);
+                    else
+                        ChangePosition(i, -loc.X + 3000);
+                }
+            }
         }
     }
 }
