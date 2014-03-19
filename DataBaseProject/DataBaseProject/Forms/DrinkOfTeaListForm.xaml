@@ -24,7 +24,7 @@
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_teaStackPanel">
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_redTeaGrid">        
+                    <Grid MouseDown="OnMouseDownGrid">        
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -37,7 +37,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Black/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greenTeaGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -51,7 +51,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Green/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_matchaGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -65,7 +65,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Matcha/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_oolongGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -79,7 +79,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Oolong/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greengageGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -93,7 +93,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Greengage/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -107,7 +107,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_puerGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -121,7 +121,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Puer/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_roselleGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -135,7 +135,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Roselle/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_yakultGrid">
+                    <Grid MouseDown="OnMouseDownGrid">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>

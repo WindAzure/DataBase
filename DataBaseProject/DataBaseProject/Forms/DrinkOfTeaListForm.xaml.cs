@@ -86,15 +86,15 @@ namespace DataBaseProject.Forms
                 var loc = item.PointToScreen(new Point(0, 0));
                 if (item == sender)
                 {
-                    ChangePosition(i, 200 - loc.X);
+                    ChangePosition(i, ConstValue.BASE_POINT - loc.X);
                     flag = true;
                 }
                 else
                 {
                     if (!flag)
-                        ChangePosition(i, -loc.X - 1000);
+                        ChangePosition(i, -loc.X + ConstValue.HEAD_POINT);
                     else
-                        ChangePosition(i, -loc.X + 3000);
+                        ChangePosition(i, -loc.X + ConstValue.TAIL_POINT);
                 }
             }
         }
