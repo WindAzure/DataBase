@@ -22,6 +22,8 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class DrinkOfTeaListForm : UserControl
     {
+        private Grid _tempGrid = null;
+
         private void DrawTitle()
         {
             _title.Children.Clear();
@@ -56,12 +58,7 @@ namespace DataBaseProject.Forms
             _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
         }
 
-        private void ClickBackButton(object sender, RoutedEventArgs e)
-        {
-            PageSwitcher.Switch(new DrinkInformationForm());
-        }
-
-        public void ChangePosition(int activePos, double location)
+        private void ChangePosition(int activePos, double location)
         {
             UIElement item = _teaStackPanel.Children[activePos];
             var loc = item.PointToScreen(new Point(0, 0));
@@ -76,17 +73,17 @@ namespace DataBaseProject.Forms
             story.Begin();
         }
 
-        private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
+        private void ArrangeItems(Grid sender)
         {
             bool flag = false;
             int length = _teaStackPanel.Children.Count;
             for (int i = 0; i < length; i++)
             {
-                UIElement item = _teaStackPanel.Children[i];
+                Grid item = _teaStackPanel.Children[i] as Grid;
                 var loc = item.PointToScreen(new Point(0, 0));
                 if (item == sender)
                 {
-                    ChangePosition(i, ConstValue.BASE_POINT - loc.X);
+                    ChangePosition(i, ConstValue.BASE_POINT-loc.X);
                     flag = true;
                 }
                 else
@@ -96,6 +93,28 @@ namespace DataBaseProject.Forms
                     else
                         ChangePosition(i, -loc.X + ConstValue.TAIL_POINT);
                 }
+            }
+        }
+
+        private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
+        {
+            if (_tempGrid == null)
+            {
+                ArrangeItems(sender as Grid);
+                _tempGrid = sender as Grid;
+            }
+        }
+
+        private void ClickBackButton(object sender, RoutedEventArgs e)
+        {
+            if (_tempGrid == null)
+            {
+                PageSwitcher.Switch(new DrinkInformationForm());
+            }
+            else
+            {
+                ArrangeItems(_tempGrid);
+                _tempGrid = null;
             }
         }
     }
