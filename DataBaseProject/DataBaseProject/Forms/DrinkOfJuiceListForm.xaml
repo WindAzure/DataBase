@@ -19,12 +19,17 @@
                 <Controls:BackButton Height="30" Width="30" OnClick="ClickBackButton"/>
                 <TextBlock Text="阿彰飲料店" Padding="20,10,0,0" Margin="30,0,0,0" Foreground="White" Background="Black" FontSize="36" Width="220"/>
             </StackPanel>
+            <Controls:CloseButton Height="30" Width="30" Margin="0,0,30,0" OnClick="ClickCloseButton" HorizontalAlignment="Right"/>
         </Grid>
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
-                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel">
-                    <Grid>
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_juiceStackPanel">
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -33,7 +38,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Apple/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -42,7 +51,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Banana/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -51,7 +64,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Grape/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -60,7 +77,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/GrapeFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -69,7 +90,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Guava/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -78,7 +103,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/KiwiFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -87,7 +116,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Orange/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -96,7 +129,11 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Papaya/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid>
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -104,8 +141,12 @@
                         <TextBlock Grid.Row="0" Text="百香果汁" Width="140" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Juice/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
-                    
-                    <Grid>
+
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>
@@ -113,8 +154,12 @@
                         <TextBlock Grid.Row="0" Text="番茄汁" Width="110" Padding="10,0,0,0" Background="Black" FontSize="28" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
                         <Image Grid.Row="1" Source="/Image/Juice/Tomatoe/pic1.png" Stretch="Fill"/>
                     </Grid>
-                    
-                    <Grid>
+
+                    <Grid MouseDown="OnMouseDownGrid">
+                        <Grid.RenderTransform>
+                            <TranslateTransform/>
+                        </Grid.RenderTransform>
+                        
                         <Grid.RowDefinitions>
                             <RowDefinition Height="5*"/>
                             <RowDefinition Height="5*"/>

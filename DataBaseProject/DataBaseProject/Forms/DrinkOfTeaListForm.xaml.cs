@@ -117,5 +117,10 @@ namespace DataBaseProject.Forms
                 _tempGrid = null;
             }
         }
+
+        private void ClickCloseButton(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

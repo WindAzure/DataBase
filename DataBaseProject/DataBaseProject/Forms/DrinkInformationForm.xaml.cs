@@ -74,5 +74,14 @@ namespace DataBaseProject.Forms
         {
             PageSwitcher.Switch(new DrinkOfSmoothieListForm());
         }
+
+        private void ClickBackButton(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void ClickCloseButton(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
