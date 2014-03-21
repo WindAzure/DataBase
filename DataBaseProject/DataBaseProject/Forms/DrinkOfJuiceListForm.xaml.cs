@@ -95,11 +95,16 @@ namespace DataBaseProject.Forms
             }
         }
 
+        private void ArrangeIngredient()
+        { 
+        }
+
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
         {
             if (_tempGrid == null)
             {
                 ArrangeItems(sender as Grid);
+
                 _tempGrid = sender as Grid;
             }
         }
