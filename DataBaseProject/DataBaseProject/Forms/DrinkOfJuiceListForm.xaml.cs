@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DataBaseProject.Controls;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,7 +99,8 @@ namespace DataBaseProject.Forms
         }
 
         private void ArrangeIngredient()
-        { 
+        {
+            IngredientPanel panel = new IngredientPanel("_appleJuice");
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
@@ -104,8 +108,8 @@ namespace DataBaseProject.Forms
             if (_tempGrid == null)
             {
                 ArrangeItems(sender as Grid);
-
                 _tempGrid = sender as Grid;
+                ArrangeIngredient();
             }
         }
 

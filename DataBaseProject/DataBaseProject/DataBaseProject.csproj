@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\IngredientPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\DrinkInformationForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,6 +139,9 @@
     </Compile>
     <Compile Include="Controls\DrinkLogo.xaml.cs">
       <DependentUpon>DrinkLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IngredientPanel.xaml.cs">
+      <DependentUpon>IngredientPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrinkInformationForm.xaml.cs">
       <DependentUpon>DrinkInformationForm.xaml</DependentUpon>
@@ -392,7 +399,26 @@
     <Resource Include="Image\Smoothie\WaterMelon\pic5.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DrinkInformation\" />
+    <Resource Include="DrinkInformation\_appleJuice.txt" />
+    <Resource Include="DrinkInformation\_bananaJuice.txt" />
+    <Resource Include="DrinkInformation\_grapeFruitJuice.txt" />
+    <Resource Include="DrinkInformation\_grpaeJuice.txt" />
+    <Resource Include="DrinkInformation\_guavaJuice.txt" />
+    <Resource Include="DrinkInformation\_kiwiFruitJuice.txt" />
+    <Resource Include="DrinkInformation\_orangeJuice.txt" />
+    <Resource Include="DrinkInformation\_papayaJuice.txt" />
+    <Resource Include="DrinkInformation\_passionFruitJuice.txt" />
+    <Resource Include="DrinkInformation\_tomatoeJuice.txt" />
+    <Resource Include="DrinkInformation\_waterMelonJuice.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Item\item1.png" />
+    <Resource Include="Image\Item\item2.png" />
+    <Resource Include="Image\Item\item3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Item\item4.jpg" />
+    <Resource Include="Image\Item\item5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
