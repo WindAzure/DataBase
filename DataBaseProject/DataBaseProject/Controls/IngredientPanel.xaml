@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical" x:Name="_ingredientStackPanel">
             <TextBlock Text="Ingredient" Width="140" Padding="10,0,0,0" Background="Black" FontSize="24" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
 
-            <Grid Margin="0,0,0,30">
+            <!--<Grid Margin="0,0,0,30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="3*"/>
                     <ColumnDefinition Width="7*"/>
@@ -43,7 +43,7 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.Column="0" Source="/Image/Item/item4.jpg" Height="30" Width="30" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <TextBlock Grid.Column="1" Text="高山泉水" Width="80" FontSize="18" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
+            </Grid>-->
         </StackPanel>
     </Grid>
 </UserControl>

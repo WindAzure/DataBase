@@ -417,8 +417,8 @@
     <Resource Include="Image\Item\item3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Item\item4.jpg" />
-    <Resource Include="Image\Item\item5.jpg" />
+    <Resource Include="Image\Item\item4.png" />
+    <Resource Include="Image\Item\item5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

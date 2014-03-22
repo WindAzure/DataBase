@@ -28,10 +28,47 @@ namespace DataBaseProject.Controls
 
         public IngredientPanel(String fileName)
         {
-            String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/_appleJuice.txt", Encoding.UTF8);
-            foreach (String d in data)
+            InitializeComponent();
+
+            int number = 1;
+            String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
+            String[] ingredient = data[0].Split(' ');
+
+            foreach (String s in ingredient)
             {
-                Debug.WriteLine(d);
+                Grid grid = new Grid();
+                grid.Margin = new Thickness(0, 0, 0, 30);
+
+                ColumnDefinition col1 = new ColumnDefinition();
+                col1.Width = new GridLength(3, GridUnitType.Star);
+                ColumnDefinition col2 = new ColumnDefinition();
+                col2.Width = new GridLength(7, GridUnitType.Star);
+                grid.ColumnDefinitions.Add(col1);
+                grid.ColumnDefinitions.Add(col2);
+
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri("../../Image/Item/item" + number.ToString() + ".png", UriKind.Relative));
+                img.Height = 30;
+                img.Width = 30;
+                img.Stretch = Stretch.Fill;
+                img.HorizontalAlignment = HorizontalAlignment.Center;
+                img.VerticalAlignment = VerticalAlignment.Center;
+
+                TextBlock block = new TextBlock();
+                block.Text = s;
+                block.Width = 80;
+                block.FontSize = 18;
+                block.Foreground = Brushes.Gray;
+                block.HorizontalAlignment = HorizontalAlignment.Center;
+                block.VerticalAlignment = VerticalAlignment.Center;
+
+                grid.Children.Add(img);
+                grid.Children.Add(block);
+                Grid.SetColumn(img, 0);
+                Grid.SetColumn(block, 1);
+
+                _ingredientStackPanel.Children.Add(grid);
+                number++;
             }
         }
     }

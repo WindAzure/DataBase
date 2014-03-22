@@ -38,8 +38,6 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Apple/pic1.png" Stretch="Fill"/>
                     </Grid>
                     
-                    <Controls:IngredientPanel/>
-                    
                     <Grid MouseDown="OnMouseDownGrid" x:Name="_bananaJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
