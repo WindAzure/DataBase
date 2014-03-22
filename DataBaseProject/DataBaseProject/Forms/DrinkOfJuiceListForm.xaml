@@ -25,7 +25,7 @@
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_juiceStackPanel">
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_appleJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -46,7 +46,7 @@
                         <TextBlock Text="高山泉水" Width="80" FontSize="20" Margin="0,0,0,60" Foreground="Gray"/>
                     </StackPanel>
                     
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_bananaJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -59,7 +59,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Banana/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_grpaeJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -72,7 +72,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Grape/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_grapeFruitJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -85,7 +85,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/GrapeFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_guavaJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -98,7 +98,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Guava/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_kiwiFruitJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -111,7 +111,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/KiwiFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_orangeJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -124,7 +124,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Orange/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_papayaJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -137,7 +137,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Papaya/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -150,7 +150,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_tomatoeJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -163,7 +163,7 @@
                         <Image Grid.Row="1" Source="/Image/Juice/Tomatoe/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_waterMelonJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>

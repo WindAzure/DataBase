@@ -354,7 +354,10 @@
   <ItemGroup>
     <Resource Include="Image\Smoothie\FrontCover.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\Recommend.png" />
+    <Resource Include="Image\Special.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Smoothie\BlueBerry\pic1.png" />
     <Resource Include="Image\Smoothie\BlueBerry\pic2.png" />
@@ -387,6 +390,9 @@
     <Resource Include="Image\Smoothie\WaterMelon\pic3.png" />
     <Resource Include="Image\Smoothie\WaterMelon\pic4.png" />
     <Resource Include="Image\Smoothie\WaterMelon\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DrinkInformation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,7 +30,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Controls:DrinkLogo OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/Special.png"/>
             </Grid>
 
             <Grid  Grid.Column="1">
@@ -39,7 +39,7 @@
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
 
-                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/KindPicture/images.jpg"/>
+                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/Recommend.png"/>
                 <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnTeaImageMouseUp" ImagePath="/Image/Tea/FrontCover.jpg"/>
             </Grid>
 
