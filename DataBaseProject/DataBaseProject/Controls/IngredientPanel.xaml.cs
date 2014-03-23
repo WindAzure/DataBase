@@ -79,14 +79,14 @@ namespace DataBaseProject.Controls
             _translateTransform.Y = Y;
         }
 
-        public void MovePanel(double X, double Y,TimeSpan span)
+        public void MovePanel(double X, double Y)
         {
             DoubleAnimation animation1 = new DoubleAnimation();
-            animation1.Duration = span;
+            animation1.Duration = ConstValue.INGREDIENT_MOVE_SPEED;
             animation1.To = X;
 
             DoubleAnimation animation2 = new DoubleAnimation();
-            animation2.Duration = span;
+            animation2.Duration = ConstValue.INGREDIENT_MOVE_SPEED;
             animation2.To = Y;
             Storyboard board = new Storyboard();
             board.Children.Add(animation1);

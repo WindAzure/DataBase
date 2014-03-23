@@ -64,9 +64,8 @@ namespace DataBaseProject.Forms
         private void ChangePosition(int activePos, double location)
         {
             UIElement item = _juiceStackPanel.Children[activePos];
-            var loc = item.PointToScreen(new Point(0, 0));
             DoubleAnimation animation = new DoubleAnimation();
-            animation.Duration = TimeSpan.FromMilliseconds(200);
+            animation.Duration = ConstValue.DRINK_LIST_SPREAD_SPEED;
             animation.To = location;
 
             Storyboard story = new Storyboard();
@@ -104,8 +103,8 @@ namespace DataBaseProject.Forms
             String name = ((DependencyObject)sender).GetValue(FrameworkElement.NameProperty) as String;
             _panel = new IngredientPanel(name);
             _secondGrid.Children.Add(_panel);
-            _panel.InitializePosition(150, -200);
-            _panel.MovePanel(150, 200, TimeSpan.FromMilliseconds(200));
+            _panel.InitializePosition(ConstValue.INGREDIENT_START_POINTX, ConstValue.INGREDIENT_START_POINTY);
+            _panel.MovePanel(ConstValue.INGREDIENT_END_POINTX, ConstValue.INGREDIENT_END_POINTY);
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
