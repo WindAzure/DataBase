@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="DataBaseProject.Controls.IngredientImagePanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid x:Name="_ingredientImagePanel" Width="500" Height="100">
+        <Image Source="/Image/Juice/Apple/pic2.png" Stretch="Fill" Width="100" Height="100" Margin="81,-56,319,56"/>
+        <Image Source="/Image/Juice/Apple/pic3.png" Stretch="Fill" Width="100" Height="100" Margin="36,0,364,0"/>
+        <Image Source="/Image/Juice/Apple/pic4.png" Stretch="Fill" Margin="136,-46,249,24"/>
+        <Image Source="/Image/Juice/Apple/pic5.png" Stretch="Fill" Width="100" Height="100" RenderTransformOrigin="0.03,0.57" Margin="111,10,289,-10"/>
+    </Grid>
+
+</UserControl>

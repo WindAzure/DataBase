@@ -1,4 +1,5 @@
-﻿using DataBaseProject.Forms;
+﻿using DataBaseProject.Controls;
+using DataBaseProject.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,8 @@ namespace DataBaseProject
         {
             InitializeComponent();
             PageSwitcher._maindow = this;
-            PageSwitcher.Switch(new DrinkInformationForm());
+            //PageSwitcher.Switch(new DrinkInformationForm());
+            PageSwitcher.Switch(new IngredientImagePanel());
         }
 
         public void Navigate(UserControl control)

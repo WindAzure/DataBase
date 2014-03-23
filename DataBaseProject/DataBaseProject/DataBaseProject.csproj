@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\IngredientImagePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\IngredientPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +143,9 @@
     </Compile>
     <Compile Include="Controls\DrinkLogo.xaml.cs">
       <DependentUpon>DrinkLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IngredientImagePanel.xaml.cs">
+      <DependentUpon>IngredientImagePanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\IngredientPanel.xaml.cs">
       <DependentUpon>IngredientPanel.xaml</DependentUpon>
@@ -392,13 +399,6 @@
     <Resource Include="Image\Smoothie\PineApple\pic6.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\Smoothie\WaterMelon\pic1.png" />
-    <Resource Include="Image\Smoothie\WaterMelon\pic2.png" />
-    <Resource Include="Image\Smoothie\WaterMelon\pic3.png" />
-    <Resource Include="Image\Smoothie\WaterMelon\pic4.png" />
-    <Resource Include="Image\Smoothie\WaterMelon\pic5.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="DrinkInformation\_appleJuice.txt" />
     <Resource Include="DrinkInformation\_bananaJuice.txt" />
     <Resource Include="DrinkInformation\_grapeFruitJuice.txt" />
@@ -419,6 +419,49 @@
   <ItemGroup>
     <Resource Include="Image\Item\item4.png" />
     <Resource Include="Image\Item\item5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Black\pic3.png" />
+    <Resource Include="Image\Tea\Black\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Smoothie\WaterMelon\pic1.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic2.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic3.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic4.png" />
+    <Resource Include="Image\Smoothie\WaterMelon\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Green\pic3.png" />
+    <Resource Include="Image\Tea\Green\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Greengage\pic4.png" />
+    <Resource Include="Image\Tea\Greengage\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Matcha\pic4.png" />
+    <Resource Include="Image\Tea\Matcha\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Oolong\pic3.png" />
+    <Resource Include="Image\Tea\Oolong\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\PassionFruit\pic4.png" />
+    <Resource Include="Image\Tea\PassionFruit\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Puer\pic3.png" />
+    <Resource Include="Image\Tea\Puer\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Roselle\pic3.png" />
+    <Resource Include="Image\Tea\Roselle\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Tea\Yakult\pic4.png" />
+    <Resource Include="Image\Tea\Yakult\pic5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
