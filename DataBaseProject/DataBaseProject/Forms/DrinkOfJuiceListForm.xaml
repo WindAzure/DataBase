@@ -169,6 +169,7 @@
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
+            <Grid x:Name="_secondGrid" HorizontalAlignment="Left"/>
         </Grid>
     </Grid>
 </UserControl>
