@@ -25,6 +25,7 @@ namespace DataBaseProject.Forms
     public partial class DrinkOfJuiceListForm : UserControl
     {
         private IngredientPanel _panel = null;
+        private IngredientImagePanel _imagePanel = null;
         private Grid _tempGrid = null;
 
         private void DrawTitle()
@@ -101,10 +102,16 @@ namespace DataBaseProject.Forms
         private void ArrangeIngredient(Grid sender)
         {
             String name = ((DependencyObject)sender).GetValue(FrameworkElement.NameProperty) as String;
+
             _panel = new IngredientPanel(name);
             _secondGrid.Children.Add(_panel);
             _panel.InitializePosition(ConstValue.INGREDIENT_START_POINTX, ConstValue.INGREDIENT_START_POINTY);
             _panel.MovePanel(ConstValue.INGREDIENT_END_POINTX, ConstValue.INGREDIENT_END_POINTY);
+
+
+            _imagePanel = new IngredientImagePanel(name);
+            _imagePanel.Margin = new Thickness(800, 200, 0, 0);
+            _thirdGrid.Children.Add(_imagePanel);
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
@@ -126,6 +133,8 @@ namespace DataBaseProject.Forms
             else
             {
                 _secondGrid.Children.Remove(_panel);
+                _thirdGrid.Children.Remove(_imagePanel);
+                _imagePanel = null;
                 _panel = null;
                 ArrangeItems(_tempGrid);
                 _tempGrid = null;

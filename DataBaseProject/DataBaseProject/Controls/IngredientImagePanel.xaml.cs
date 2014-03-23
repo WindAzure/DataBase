@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -34,21 +35,21 @@ namespace DataBaseProject.Controls
             return "";
         }
 
-        private void AddImage3(Image img,int pos)
+        private void AddImage3(Image img, int pos)
         {
-                if(pos==0)
-                {
-                    img.Margin=new Thickness(81,-56,319,56);
-                }
-                else if (pos == 1)
-                {
-                    img.Margin=new Thickness(36,0,364,0);
-                }
-                else
-                {
-                    img.Margin=new Thickness(111,10,289,-10);
-                    img.RenderTransformOrigin=new Point(0.03,0.57);
-                }
+            if (pos == 0)
+            {
+                img.Margin = new Thickness(81, -56, 319, 56);
+            }
+            else if (pos == 1)
+            {
+                img.Margin = new Thickness(36, 0, 364, 0);
+            }
+            else
+            {
+                img.Margin = new Thickness(111, 10, 289, -10);
+                img.RenderTransformOrigin = new Point(0.03, 0.57);
+            }
         }
 
         private void AddImage4(Image img, int pos)
@@ -100,7 +101,7 @@ namespace DataBaseProject.Controls
         public IngredientImagePanel(String fileName)
         {
             InitializeComponent();
-
+            
             String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
             String[] ingredient = data[0].Split(' ');
             String folderName = GetMapping(fileName);
@@ -112,11 +113,11 @@ namespace DataBaseProject.Controls
                 img.Stretch = Stretch.Fill;
                 img.Height = 100;
                 img.Width = 100;
-
+                img.RenderTransform = new TranslateTransform();
 
                 if (ingredient.Length == 3)
                 {
-                    AddImage3(img,i);
+                    AddImage3(img, i);
                 }
                 else if (ingredient.Length == 4)
                 {
