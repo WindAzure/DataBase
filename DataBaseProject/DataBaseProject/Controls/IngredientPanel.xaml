@@ -5,45 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <StackPanel Orientation="Vertical" x:Name="_ingredientStackPanel">
+    <Grid x:Name="_ingredientPanel">
+        <Grid.RenderTransform>
+            <TranslateTransform X="0" Y="-300" x:Name="_translateTransform"/>
+        </Grid.RenderTransform>
+
+        <StackPanel Orientation="Vertical" x:Name="_ingredientStackPanel">            
             <TextBlock Text="Ingredient" Width="140" Padding="10,0,0,0" Background="Black" FontSize="24" Margin="0,0,0,60" Foreground="White" HorizontalAlignment="Center"/>
-
-            <!--<Grid Margin="0,0,0,30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="7*"/>
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="/Image/Item/item1.png" Height="30" Width="30" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="蘋果" Width="80" FontSize="18" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
-
-            <Grid  Margin="0,0,0,30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="7*"/>
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="/Image/Item/item2.png" Height="30" Width="30" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="冰塊" Width="80" FontSize="18" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
-
-            <Grid  Margin="0,0,0,30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="7*"/>
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="/Image/Item/item3.png" Height="30" Width="30" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="果糖" Width="80" FontSize="18" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>
-
-            <Grid  Margin="0,0,0,30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*"/>
-                    <ColumnDefinition Width="7*"/>
-                </Grid.ColumnDefinitions>
-                <Image Grid.Column="0" Source="/Image/Item/item4.jpg" Height="30" Width="30" Stretch="Fill" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <TextBlock Grid.Column="1" Text="高山泉水" Width="80" FontSize="18" Foreground="Gray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </Grid>-->
         </StackPanel>
     </Grid>
 </UserControl>

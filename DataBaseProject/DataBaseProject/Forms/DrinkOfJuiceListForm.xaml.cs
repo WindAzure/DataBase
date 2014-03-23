@@ -24,7 +24,7 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class DrinkOfJuiceListForm : UserControl
     {
-        private IngredientPanel panel=null;
+        private IngredientPanel panel = null;
         private Grid _tempGrid = null;
 
         private void DrawTitle()
@@ -58,7 +58,7 @@ namespace DataBaseProject.Forms
 
         private void OnMouseWheelStackPanel(object sender, MouseWheelEventArgs e)
         {
-            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset-e.Delta);
+            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
         }
 
         private void ChangePosition(int activePos, double location)
@@ -99,20 +99,22 @@ namespace DataBaseProject.Forms
             }
         }
 
-        private void ArrangeIngredient(DependencyObject sender)
+        private void ArrangeIngredient(Grid sender)
         {
-            String name = sender.GetValue(FrameworkElement.NameProperty) as String;
+            String name = ((DependencyObject)sender).GetValue(FrameworkElement.NameProperty) as String;
             panel = new IngredientPanel(name);
-            _juiceStackPanel.Children.Insert(1,panel);
+            _juiceStackPanel.Children.Insert(0, panel);
+            panel.InitializePosition(300, -300);
+            panel.MovePanel(300, 0, TimeSpan.FromMilliseconds(200));
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
         {
             if (_tempGrid == null)
             {
-                //ArrangeItems(sender as Grid);
+                ArrangeItems(sender as Grid);
                 _tempGrid = sender as Grid;
-                ArrangeIngredient(sender as DependencyObject);
+                ArrangeIngredient(sender as Grid);
             }
         }
 

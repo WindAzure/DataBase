@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -70,6 +71,31 @@ namespace DataBaseProject.Controls
                 _ingredientStackPanel.Children.Add(grid);
                 number++;
             }
+        }
+
+        public void InitializePosition(double X, double Y)
+        {
+            _translateTransform.X = X;
+            _translateTransform.Y = Y;
+        }
+
+        public void MovePanel(double X, double Y,TimeSpan span)
+        {
+            DoubleAnimation animation1 = new DoubleAnimation();
+            animation1.Duration = span;
+            animation1.To = X;
+
+            DoubleAnimation animation2 = new DoubleAnimation();
+            animation2.Duration = span;
+            animation2.To = Y;
+            Storyboard board = new Storyboard();
+            board.Children.Add(animation1);
+            board.Children.Add(animation2);
+            Storyboard.SetTargetProperty(animation1, new PropertyPath("RenderTransform.X"));
+            Storyboard.SetTargetProperty(animation2, new PropertyPath("RenderTransform.Y"));
+            Storyboard.SetTarget(animation1, _ingredientPanel);
+            Storyboard.SetTarget(animation2, _ingredientPanel);
+            board.Begin();
         }
     }
 }
