@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,7 +108,7 @@ namespace DataBaseProject.Controls
             for (int i = 0; i < ingredient.Length; i++)
             {
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri("../../Image/" + folderName + "pic" + (i + 2).ToString() + ".png", UriKind.Relative));
+                img.Source = new BitmapImage(new Uri("../../Image" + folderName + "pic" + (i + 2).ToString() + ".png", UriKind.Relative));
                 img.Stretch = Stretch.Fill;
                 img.Height = 100;
                 img.Width = 100;

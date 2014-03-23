@@ -26,7 +26,7 @@ namespace DataBaseProject
             InitializeComponent();
             PageSwitcher._maindow = this;
             //PageSwitcher.Switch(new DrinkInformationForm());
-            PageSwitcher.Switch(new IngredientImagePanel());
+            PageSwitcher.Switch(new IngredientImagePanel("_appleJuice"));
         }
 
         public void Navigate(UserControl control)
