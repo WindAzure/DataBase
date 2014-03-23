@@ -35,6 +35,16 @@ namespace DataBaseProject.Controls
             return "";
         }
 
+        private void InitializePosition()
+        {
+            foreach (Image img in _ingredientImagePanel.Children)
+            {
+                TranslateTransform trans = img.RenderTransform as TranslateTransform;
+                trans.X = 0;
+                trans.Y = 400;
+            }
+        }
+
         private void AddImage3(Image img, int pos)
         {
             if (pos == 0)
@@ -130,6 +140,23 @@ namespace DataBaseProject.Controls
 
                 _ingredientImagePanel.Children.Add(img);
             }
+            InitializePosition();
+        }
+
+        private void MoveItems(Transform form,TimeSpan span)
+        {
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.To = 0;
+            animation.Duration = span;
+            form.BeginAnimation(TranslateTransform.YProperty, animation);
+        }
+
+        public void StartMove()
+        {
+            MoveItems(_ingredientImagePanel.Children[0].RenderTransform, TimeSpan.FromMilliseconds(200));
+            MoveItems(_ingredientImagePanel.Children[1].RenderTransform, TimeSpan.FromMilliseconds(300));
+            MoveItems(_ingredientImagePanel.Children[2].RenderTransform, TimeSpan.FromMilliseconds(400));
+            MoveItems(_ingredientImagePanel.Children[3].RenderTransform, TimeSpan.FromMilliseconds(500));
         }
     }
 }

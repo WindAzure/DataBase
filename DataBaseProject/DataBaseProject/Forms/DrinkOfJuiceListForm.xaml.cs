@@ -112,12 +112,14 @@ namespace DataBaseProject.Forms
             _imagePanel = new IngredientImagePanel(name);
             _imagePanel.Margin = new Thickness(800, 200, 0, 0);
             _thirdGrid.Children.Add(_imagePanel);
+            _imagePanel.StartMove();
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
         {
             if (_tempGrid == null)
             {
+                _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 ArrangeItems(sender as Grid);
                 _tempGrid = sender as Grid;
                 ArrangeIngredient(sender as Grid);
@@ -138,6 +140,7 @@ namespace DataBaseProject.Forms
                 _panel = null;
                 ArrangeItems(_tempGrid);
                 _tempGrid = null;
+                _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
             }
         }
 
