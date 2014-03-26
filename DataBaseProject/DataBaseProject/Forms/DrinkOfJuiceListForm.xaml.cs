@@ -104,13 +104,12 @@ namespace DataBaseProject.Forms
             String name = ((DependencyObject)sender).GetValue(FrameworkElement.NameProperty) as String;
 
             _panel = new IngredientPanel(name);
+            _panel.Margin = new Thickness(ConstValue.INGREDIENT_END_POINTX, ConstValue.INGREDIENT_END_POINTY, 0, 0);
             _secondGrid.Children.Add(_panel);
-            _panel.InitializePosition(ConstValue.INGREDIENT_START_POINTX, ConstValue.INGREDIENT_START_POINTY);
-            _panel.MovePanel(ConstValue.INGREDIENT_END_POINTX, ConstValue.INGREDIENT_END_POINTY);
-
+            _panel.StartMove();
 
             _imagePanel = new IngredientImagePanel(name);
-            _imagePanel.Margin = new Thickness(800, 200, 0, 0);
+            _imagePanel.Margin = new Thickness(ConstValue.INGREDIENT_IMAGE_END_POINTX, ConstValue.INGREDIENT_IMAGE_END_POINTY, 0, 0);
             _thirdGrid.Children.Add(_imagePanel);
             _imagePanel.StartMove();
         }

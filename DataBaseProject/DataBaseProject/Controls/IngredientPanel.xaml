@@ -7,7 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid x:Name="_ingredientPanel" Width="300">
         <Grid.RenderTransform>
-            <TranslateTransform x:Name="_translateTransform"/>
+            <TranslateTransform x:Name="_translateTransform" X="0" Y="-400"/>
         </Grid.RenderTransform>
 
         <StackPanel Orientation="Vertical" x:Name="_ingredientStackPanel">            

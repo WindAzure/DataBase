@@ -73,28 +73,16 @@ namespace DataBaseProject.Controls
             }
         }
 
-        public void InitializePosition(double X, double Y)
+        public void StartMove()
         {
-            _translateTransform.X = X;
-            _translateTransform.Y = Y;
-        }
+            DoubleAnimation animation = new DoubleAnimation();
+            animation.Duration = ConstValue.INGREDIENT_MOVE_SPEED;
+            animation.To = 0;
 
-        public void MovePanel(double X, double Y)
-        {
-            DoubleAnimation animation1 = new DoubleAnimation();
-            animation1.Duration = ConstValue.INGREDIENT_MOVE_SPEED;
-            animation1.To = X;
-
-            DoubleAnimation animation2 = new DoubleAnimation();
-            animation2.Duration = ConstValue.INGREDIENT_MOVE_SPEED;
-            animation2.To = Y;
             Storyboard board = new Storyboard();
-            board.Children.Add(animation1);
-            board.Children.Add(animation2);
-            Storyboard.SetTargetProperty(animation1, new PropertyPath("RenderTransform.X"));
-            Storyboard.SetTargetProperty(animation2, new PropertyPath("RenderTransform.Y"));
-            Storyboard.SetTarget(animation1, _ingredientPanel);
-            Storyboard.SetTarget(animation2, _ingredientPanel);
+            board.Children.Add(animation);
+            Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.Y"));
+            Storyboard.SetTarget(animation, _ingredientPanel);
             board.Begin();
         }
     }
