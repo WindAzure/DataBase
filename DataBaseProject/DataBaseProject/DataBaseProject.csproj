@@ -228,7 +228,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -401,7 +403,7 @@
     <Resource Include="DrinkInformation\_appleJuice.txt" />
     <Resource Include="DrinkInformation\_bananaJuice.txt" />
     <Resource Include="DrinkInformation\_grapeFruitJuice.txt" />
-    <Resource Include="DrinkInformation\_grpaeJuice.txt" />
+    <Resource Include="DrinkInformation\_grapeJuice.txt" />
     <Resource Include="DrinkInformation\_guavaJuice.txt" />
     <Resource Include="DrinkInformation\_kiwiFruitJuice.txt" />
     <Resource Include="DrinkInformation\_orangeJuice.txt" />
