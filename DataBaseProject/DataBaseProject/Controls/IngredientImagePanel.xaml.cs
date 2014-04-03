@@ -31,7 +31,10 @@ namespace DataBaseProject.Controls
         {
             if (fileName == "_appleJuice")
                 return "/Juice/Apple/";
-
+            else if (fileName == "_bananaJuice")
+                return "/Juice/Banana/";
+            else if (fileName == "_grapeJuice")
+                return "/Juice/Grape/";
             return "";
         }
 

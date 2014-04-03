@@ -120,8 +120,8 @@ namespace DataBaseProject.Forms
             {
                 _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 ArrangeItems(sender as Grid);
-                _tempGrid = sender as Grid;
                 ArrangeIngredient(sender as Grid);
+                _tempGrid = sender as Grid;
             }
         }
 

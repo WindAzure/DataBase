@@ -306,14 +306,6 @@
     <Resource Include="Image\Juice\Banana\pic2.png" />
     <Resource Include="Image\Juice\Banana\pic3.png" />
     <Resource Include="Image\Juice\Banana\pic4.png" />
-    <Resource Include="Image\Juice\Banana\pic5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\Juice\Grape\pic1.png" />
-    <Resource Include="Image\Juice\Grape\pic2.png" />
-    <Resource Include="Image\Juice\Grape\pic3.png" />
-    <Resource Include="Image\Juice\Grape\pic4.png" />
-    <Resource Include="Image\Juice\Grape\pic5.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Juice\GrapeFruit\pic1.png" />
@@ -466,6 +458,32 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Juice\Apple\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DrinkInformation\_blackTea.txt" />
+    <Resource Include="DrinkInformation\_blueBerrySmoothies.txt" />
+    <Resource Include="DrinkInformation\_greengageTea.txt" />
+    <Resource Include="DrinkInformation\_greenTea.txt" />
+    <Resource Include="DrinkInformation\_mangoSmoothies.txt" />
+    <Resource Include="DrinkInformation\_matchaTea.txt" />
+    <Resource Include="DrinkInformation\_oolongTea.txt" />
+    <Resource Include="DrinkInformation\_passionFruitSoomthies.txt" />
+    <Resource Include="DrinkInformation\_passionFruitTea.txt" />
+    <Resource Include="DrinkInformation\_pineAppleSmoothies.txt" />
+    <Resource Include="DrinkInformation\_puerTea.txt" />
+    <Resource Include="DrinkInformation\_roselleTea.txt" />
+    <Resource Include="DrinkInformation\_waterMelonSmoothies.txt" />
+    <Resource Include="DrinkInformation\_yakultTea.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Banana\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Juice\Grape\pic1.png" />
+    <Resource Include="Image\Juice\Grape\pic2.png" />
+    <Resource Include="Image\Juice\Grape\pic3.png" />
+    <Resource Include="Image\Juice\Grape\pic4.png" />
+    <Resource Include="Image\Juice\Grape\pic5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
