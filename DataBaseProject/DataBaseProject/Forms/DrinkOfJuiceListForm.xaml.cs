@@ -118,9 +118,9 @@ namespace DataBaseProject.Forms
         {
             if (_tempGrid == null)
             {
-                _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
+               // _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 ArrangeItems(sender as Grid);
-               // ArrangeIngredient(sender as Grid);
+                ArrangeIngredient(sender as Grid);
                 _tempGrid = sender as Grid;
             }
         }
