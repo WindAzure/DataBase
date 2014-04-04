@@ -24,6 +24,7 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class DrinkOfJuiceListForm : UserControl
     {
+        private bool _canScroll = true;
         private IngredientPanel _panel = null;
         private IngredientImagePanel _imagePanel = null;
         private PricePanel _pricePanel = null;
@@ -60,7 +61,10 @@ namespace DataBaseProject.Forms
 
         private void OnMouseWheelStackPanel(object sender, MouseWheelEventArgs e)
         {
-            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
+            if (_canScroll)
+            {
+                _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
+            }
         }
 
         private void ChangePosition(int activePos, double location)
@@ -127,7 +131,7 @@ namespace DataBaseProject.Forms
                 ArrangeItems(sender as Grid);
                 ArrangeIngredient(sender as Grid);
                 _tempGrid = sender as Grid;
-                //_scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
+                _canScroll = false;
             }
         }
 
@@ -146,7 +150,7 @@ namespace DataBaseProject.Forms
                 _panel = null;
                 ArrangeItems(_tempGrid);
                 _tempGrid = null;
-                //_scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+                _canScroll = true;
             }
         }
 
