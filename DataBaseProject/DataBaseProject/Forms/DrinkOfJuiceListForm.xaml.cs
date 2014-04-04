@@ -92,9 +92,9 @@ namespace DataBaseProject.Forms
                 else
                 {
                     if (!flag)
-                        ChangePosition(i, -loc.X + ConstValue.HEAD_POINT);
+                        ChangePosition(i, ConstValue.HEAD_POINT - loc.X);
                     else
-                        ChangePosition(i, -loc.X + ConstValue.TAIL_POINT);
+                        ChangePosition(i, ConstValue.TAIL_POINT - loc.X);
                 }
             }
         }
@@ -120,7 +120,7 @@ namespace DataBaseProject.Forms
             {
                 _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 ArrangeItems(sender as Grid);
-                ArrangeIngredient(sender as Grid);
+               // ArrangeIngredient(sender as Grid);
                 _tempGrid = sender as Grid;
             }
         }
