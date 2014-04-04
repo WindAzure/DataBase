@@ -35,6 +35,22 @@ namespace DataBaseProject.Controls
                 return "/Juice/Banana/";
             else if (fileName == "_grapeJuice")
                 return "/Juice/Grape/";
+            else if (fileName == "_grapeFruitJuice")
+                return "/Juice/GrapeFruit/";
+            else if (fileName == "_guavaJuice")
+                return "/Juice/Guava/";
+            else if (fileName == "_kiwiFruitJuice")
+                return "/Juice/KiwiFruit/";
+            else if (fileName == "_orangeJuice")
+                return "/Juice/Orange/";
+            else if (fileName == "_papayaJuice")
+                return "/Juice/Papaya/";
+            else if (fileName == "_passionFruitJuice")
+                return "/Juice/PassionFruit/";
+            else if (fileName == "_tomatoeJuice")
+                return "/Juice/Tomatoe/";
+            else if (fileName == "_waterMelonJuice")
+                return "/Juice/WaterMelon/";
             return "";
         }
 
@@ -114,7 +130,7 @@ namespace DataBaseProject.Controls
         public IngredientImagePanel(String fileName)
         {
             InitializeComponent();
-            
+
             String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
             String[] ingredient = data[0].Split(' ');
             String folderName = GetMapping(fileName);
@@ -146,7 +162,7 @@ namespace DataBaseProject.Controls
             InitializePosition();
         }
 
-        private void MoveItems(Transform form,TimeSpan span)
+        private void MoveItems(Transform form, TimeSpan span)
         {
             DoubleAnimation animation = new DoubleAnimation();
             animation.To = 0;
@@ -156,10 +172,10 @@ namespace DataBaseProject.Controls
 
         public void StartMove()
         {
-            MoveItems(_ingredientImagePanel.Children[0].RenderTransform, TimeSpan.FromMilliseconds(200));
-            MoveItems(_ingredientImagePanel.Children[1].RenderTransform, TimeSpan.FromMilliseconds(300));
-            MoveItems(_ingredientImagePanel.Children[2].RenderTransform, TimeSpan.FromMilliseconds(400));
-            MoveItems(_ingredientImagePanel.Children[3].RenderTransform, TimeSpan.FromMilliseconds(500));
+            for (int i = 0; i < _ingredientImagePanel.Children.Count; i++)
+            {
+                MoveItems(_ingredientImagePanel.Children[i].RenderTransform, TimeSpan.FromMilliseconds(200 + i * 100));
+            }
         }
     }
 }
