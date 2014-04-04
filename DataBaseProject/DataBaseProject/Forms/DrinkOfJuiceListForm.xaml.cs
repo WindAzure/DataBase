@@ -26,6 +26,7 @@ namespace DataBaseProject.Forms
     {
         private IngredientPanel _panel = null;
         private IngredientImagePanel _imagePanel = null;
+        private PricePanel _pricePanel = null;
         private Grid _tempGrid = null;
 
         private void DrawTitle()
@@ -112,16 +113,21 @@ namespace DataBaseProject.Forms
             _imagePanel.Margin = new Thickness(ConstValue.INGREDIENT_IMAGE_END_POINTX, ConstValue.INGREDIENT_IMAGE_END_POINTY, 0, 0);
             _thirdGrid.Children.Add(_imagePanel);
             _imagePanel.StartMove();
+
+            _pricePanel = new PricePanel();
+            _pricePanel.Margin = new Thickness(ConstValue.INGREDIENT_SHOP_END_POINTX,ConstValue.INGREDINET_SHOP_END_POINTY, 0, 0);
+            _fourGrid.Children.Add(_pricePanel);
+            _pricePanel.StartMove();
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
         {
             if (_tempGrid == null)
             {
-               // _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
                 ArrangeItems(sender as Grid);
                 ArrangeIngredient(sender as Grid);
                 _tempGrid = sender as Grid;
+                //_scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled;
             }
         }
 
@@ -135,11 +141,12 @@ namespace DataBaseProject.Forms
             {
                 _secondGrid.Children.Remove(_panel);
                 _thirdGrid.Children.Remove(_imagePanel);
+                _fourGrid.Children.Remove(_pricePanel);
                 _imagePanel = null;
                 _panel = null;
                 ArrangeItems(_tempGrid);
                 _tempGrid = null;
-                _scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
+                //_scrollViewer.HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden;
             }
         }
 

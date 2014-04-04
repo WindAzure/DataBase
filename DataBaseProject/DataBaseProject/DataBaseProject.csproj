@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\PricePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\DrinkInformationForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +153,9 @@
     </Compile>
     <Compile Include="Controls\IngredientPanel.xaml.cs">
       <DependentUpon>IngredientPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PricePanel.xaml.cs">
+      <DependentUpon>PricePanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrinkInformationForm.xaml.cs">
       <DependentUpon>DrinkInformationForm.xaml</DependentUpon>
@@ -484,6 +491,9 @@
     <Resource Include="Image\Juice\Grape\pic3.png" />
     <Resource Include="Image\Juice\Grape\pic4.png" />
     <Resource Include="Image\Juice\Grape\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ShopCar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
