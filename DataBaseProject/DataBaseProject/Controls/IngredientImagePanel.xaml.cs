@@ -51,6 +51,16 @@ namespace DataBaseProject.Controls
                 return "/Juice/Tomatoe/";
             else if (fileName == "_waterMelonJuice")
                 return "/Juice/WaterMelon/";
+            else if (fileName == "_blueBerrySmoothies")
+                return "/Smoothie/BlueBerry/";
+            else if (fileName == "_mangoSmoothies")
+                return "/Smoothie/Mango/";
+            else if (fileName == "_passionFruitSoomthies")
+                return "/Smoothie/PassionFruit/";
+            else if (fileName == "_pineAppleSmoothies")
+                return "/Smoothie/PineApple/";
+            else if (fileName == "_waterMelonSmoothies")
+                return "/Smoothie/WaterMelon/";
             return "";
         }
 

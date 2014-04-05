@@ -30,13 +30,13 @@ namespace DataBaseProject.Controls
         public IngredientPanel(String fileName)
         {
             InitializeComponent();
-
             int number = 1;
             String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
             String[] ingredient = data[0].Split(' ');
 
             foreach (String s in ingredient)
             {
+                Debug.WriteLine(s);
                 Grid grid = new Grid();
                 grid.Margin = new Thickness(0, 0, 0, 30);
 
@@ -49,6 +49,7 @@ namespace DataBaseProject.Controls
 
                 Image img = new Image();
                 img.Source = new BitmapImage(new Uri("../../Image/Item/item" + number.ToString() + ".png", UriKind.Relative));
+                Debug.WriteLine(System.IO.Directory.GetCurrentDirectory().ToString());
                 img.Height = 30;
                 img.Width = 30;
                 img.Stretch = Stretch.Fill;

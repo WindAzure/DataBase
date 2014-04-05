@@ -25,7 +25,7 @@
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_smoothieStackPanel">
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_blueBerrySmoothies">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -38,7 +38,7 @@
                         <Image Grid.Row="1" Source="/Image/Smoothie/BlueBerry/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_mangoSmoothies">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -51,7 +51,7 @@
                         <Image Grid.Row="1" Source="/Image/Smoothie/Mango/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitSoomthies">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -64,7 +64,7 @@
                         <Image Grid.Row="1" Source="/Image/Smoothie/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_pineAppleSmoothies">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -77,7 +77,7 @@
                         <Image Grid.Row="1" Source="/Image/Smoothie/PineApple/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_waterMelonJuice">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -91,6 +91,9 @@
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
+            <Grid x:Name="_secondGrid" HorizontalAlignment="Left"/>
+            <Grid x:Name="_thirdGrid" HorizontalAlignment="Left"/>
+            <Grid x:Name="_fourGrid" HorizontalAlignment="Left"/>
         </Grid>
     </Grid>
 </UserControl>
