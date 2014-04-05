@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBaseProject.Controls;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -22,6 +23,10 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class DrinkOfTeaListForm : UserControl
     {
+       private bool _canScroll = true;
+        private IngredientPanel _panel = null;
+        private IngredientImagePanel _imagePanel = null;
+        private PricePanel _pricePanel = null;
         private Grid _tempGrid = null;
 
         private void DrawTitle()
@@ -55,15 +60,17 @@ namespace DataBaseProject.Forms
 
         private void OnMouseWheelStackPanel(object sender, MouseWheelEventArgs e)
         {
-            _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
+            if (_canScroll)
+            {
+                _scrollViewer.ScrollToHorizontalOffset(_scrollViewer.HorizontalOffset - e.Delta);
+            }
         }
 
         private void ChangePosition(int activePos, double location)
         {
             UIElement item = _teaStackPanel.Children[activePos];
-            var loc = item.PointToScreen(new Point(0, 0));
             DoubleAnimation animation = new DoubleAnimation();
-            animation.Duration = TimeSpan.FromMilliseconds(200);
+            animation.Duration = ConstValue.DRINK_LIST_SPREAD_SPEED;
             animation.To = location;
 
             Storyboard story = new Storyboard();
@@ -83,17 +90,37 @@ namespace DataBaseProject.Forms
                 var loc = item.PointToScreen(new Point(0, 0));
                 if (item == sender)
                 {
-                    ChangePosition(i, ConstValue.BASE_POINT-loc.X);
+                    ChangePosition(i, ConstValue.BASE_POINT - loc.X);
                     flag = true;
                 }
                 else
                 {
                     if (!flag)
-                        ChangePosition(i, -loc.X + ConstValue.HEAD_POINT);
+                        ChangePosition(i, ConstValue.HEAD_POINT - loc.X);
                     else
-                        ChangePosition(i, -loc.X + ConstValue.TAIL_POINT);
+                        ChangePosition(i, ConstValue.TAIL_POINT - loc.X);
                 }
             }
+        }
+
+        private void ArrangeIngredient(Grid sender)
+        {
+            String name = ((DependencyObject)sender).GetValue(FrameworkElement.NameProperty) as String;
+
+            _panel = new IngredientPanel(name);
+            _panel.Margin = new Thickness(ConstValue.INGREDIENT_END_POINTX, ConstValue.INGREDIENT_END_POINTY, 0, 0);
+            _secondGrid.Children.Add(_panel);
+            _panel.StartMove();
+
+            _imagePanel = new IngredientImagePanel(name);
+            _imagePanel.Margin = new Thickness(ConstValue.INGREDIENT_IMAGE_END_POINTX, ConstValue.INGREDIENT_IMAGE_END_POINTY, 0, 0);
+            _thirdGrid.Children.Add(_imagePanel);
+            _imagePanel.StartMove();
+
+            _pricePanel = new PricePanel();
+            _pricePanel.Margin = new Thickness(ConstValue.INGREDIENT_SHOP_END_POINTX,ConstValue.INGREDINET_SHOP_END_POINTY, 0, 0);
+            _fourGrid.Children.Add(_pricePanel);
+            _pricePanel.StartMove();
         }
 
         private void OnMouseDownGrid(object sender, MouseButtonEventArgs e)
@@ -101,7 +128,9 @@ namespace DataBaseProject.Forms
             if (_tempGrid == null)
             {
                 ArrangeItems(sender as Grid);
+                ArrangeIngredient(sender as Grid);
                 _tempGrid = sender as Grid;
+                _canScroll = false;
             }
         }
 
@@ -113,8 +142,14 @@ namespace DataBaseProject.Forms
             }
             else
             {
+                _secondGrid.Children.Remove(_panel);
+                _thirdGrid.Children.Remove(_imagePanel);
+                _fourGrid.Children.Remove(_pricePanel);
+                _imagePanel = null;
+                _panel = null;
                 ArrangeItems(_tempGrid);
                 _tempGrid = null;
+                _canScroll = true;
             }
         }
 

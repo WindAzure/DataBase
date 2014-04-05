@@ -58,7 +58,7 @@ namespace DataBaseProject.Controls
 
                 TextBlock block = new TextBlock();
                 block.Text = s;
-                block.Width = 80;
+                block.Width = 120;
                 block.FontSize = 18;
                 block.Foreground = Brushes.Gray;
                 block.HorizontalAlignment = HorizontalAlignment.Center;

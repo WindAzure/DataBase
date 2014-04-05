@@ -25,7 +25,7 @@
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <ScrollViewer x:Name="_scrollViewer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" >
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" MouseWheel="OnMouseWheelStackPanel" x:Name="_teaStackPanel">
-                    <Grid MouseDown="OnMouseDownGrid">        
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_blackTea">        
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -38,7 +38,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Black/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greenTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -52,7 +52,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Green/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_matchaTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -66,7 +66,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Matcha/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_oolongTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -80,7 +80,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Oolong/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_greengageTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -94,7 +94,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Greengage/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_passionFruitTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -108,7 +108,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/PassionFruit/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_puerTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -122,7 +122,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Puer/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_roselleTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -136,7 +136,7 @@
                         <Image Grid.Row="1" Source="/Image/Tea/Roselle/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_yakultTea">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
@@ -151,6 +151,9 @@
                     </Grid>
                 </StackPanel>
             </ScrollViewer>
+            <Grid x:Name="_secondGrid" HorizontalAlignment="Left"/>
+            <Grid x:Name="_thirdGrid" HorizontalAlignment="Left"/>
+            <Grid x:Name="_fourGrid" HorizontalAlignment="Left"/>
         </Grid>
     </Grid>
 </UserControl>

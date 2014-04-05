@@ -61,7 +61,26 @@ namespace DataBaseProject.Controls
                 return "/Smoothie/PineApple/";
             else if (fileName == "_waterMelonSmoothies")
                 return "/Smoothie/WaterMelon/";
-            return "";
+            else if (fileName == "_blackTea")
+                return "/Tea/Black/";
+            else if (fileName == "_greenTea")
+                return "/Tea/Green/";
+            else if (fileName == "_matchaTea")
+                return "/Tea/Matcha/";
+            else if (fileName == "_oolongTea")
+                return "/Tea/Oolong/";
+            else if (fileName == "_greengageTea")
+                return "/Tea/Greengage/";
+            else if (fileName == "_passionFruitTea")
+                return "/Tea/PassionFruit/";
+            else if (fileName == "_puerTea")
+                return "/Tea/Puer/";
+            else if (fileName == "_roselleTea")
+                return "/Tea/Roselle/";
+            else if (fileName == "_yakultTea")
+                return "/Tea/Yakult/";
+            else
+                return "";
         }
 
         private void InitializePosition()
