@@ -114,12 +114,12 @@ namespace DataBaseProject.Forms
             _panel.StartMove();
 
             _imagePanel = new IngredientImagePanel(name);
-            _imagePanel.Margin = new Thickness(ConstValue.INGREDIENT_IMAGE_END_POINTX, ConstValue.INGREDIENT_IMAGE_END_POINTY, 0, 0);
+            _imagePanel.Margin = new Thickness(ConstValue.BASE_POINT + sender.ActualWidth / 2.0 + 200, ConstValue.INGREDIENT_IMAGE_END_POINTY, 0, 0);
             _thirdGrid.Children.Add(_imagePanel);
             _imagePanel.StartMove();
 
             _pricePanel = new PricePanel();
-            _pricePanel.Margin = new Thickness(ConstValue.INGREDIENT_SHOP_END_POINTX,ConstValue.INGREDINET_SHOP_END_POINTY, 0, 0);
+            _pricePanel.Margin = new Thickness(ConstValue.BASE_POINT + sender.ActualWidth + 300, ConstValue.INGREDINET_SHOP_END_POINTY, 0, 0);
             _fourGrid.Children.Add(_pricePanel);
             _pricePanel.StartMove();
         }

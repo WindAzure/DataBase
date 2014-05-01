@@ -36,7 +36,6 @@ namespace DataBaseProject.Controls
 
             foreach (String s in ingredient)
             {
-                Debug.WriteLine(s);
                 Grid grid = new Grid();
                 grid.Margin = new Thickness(0, 0, 0, 30);
 
