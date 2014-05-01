@@ -42,7 +42,7 @@ namespace DataBaseProject.Controls
             set
             {
                 _imagePath = value;
-                OnPropertyChanged("ImgagePath");
+                OnPropertyChanged("ImagePath");
             }
             get
             {

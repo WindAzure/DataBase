@@ -15,7 +15,7 @@
         <StackPanel Orientation="Vertical" x:Name="_priceStackPanel">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="建議售價：" Width="140" Height="40" Padding="10,0,0,0" Background="Black" FontSize="24" Foreground="White" HorizontalAlignment="Center"/>
-                <TextBlock Text="50 元" Width="80" Height="40" Padding="10,0,0,0" Background="Black" FontSize="24" Foreground="White" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding Price}" Width="80" Height="40" Padding="10,0,0,0" Background="Black" FontSize="24" Foreground="White" HorizontalAlignment="Center"/>
             </StackPanel>
 
             <control:DrinkLogo  Margin="0,40,0,0" ImagePath="/Image/ShopCar.png"/>

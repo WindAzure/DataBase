@@ -118,7 +118,7 @@ namespace DataBaseProject.Forms
             _thirdGrid.Children.Add(_imagePanel);
             _imagePanel.StartMove();
 
-            _pricePanel = new PricePanel();
+            _pricePanel = new PricePanel(name);
             _pricePanel.Margin = new Thickness(ConstValue.BASE_POINT + sender.ActualWidth + 300, ConstValue.INGREDINET_SHOP_END_POINTY, 0, 0);
             _fourGrid.Children.Add(_pricePanel);
             _pricePanel.StartMove();
