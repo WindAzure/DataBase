@@ -66,7 +66,8 @@ namespace DataBaseProject.Controls
             InitializeComponent();
             DataContext = this;
             String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
-            Price = data[2] + " 元";
+            Calories = "熱量：" + data[1]+" 卡";
+            Price = "建議售價："+data[2] + " 元";
         }
 
         public void StartMove()
