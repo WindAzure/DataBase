@@ -9,10 +9,10 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
-        </Grid.RowDefinitions>
-
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+        
         <Grid Grid.Row="0">
             <Canvas x:Name="_title" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0" Orientation="Horizontal">
@@ -23,8 +23,17 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
-            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
 
+            <Image Grid.Column="0" Source="/Image/Juice/Apple/pic1.png"/>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="0,0,100,0" Foreground="Gray" FontSize="30" TextWrapping="WrapWithOverflow" Text="阿彰有機純蘋果原汁，是國內有機食品業者，在美國尋尋覓覓，在加州尋訪到一位「蘋果先生」，請他只選擇完熟的新鮮蘋果製作最新鮮香氣最濃郁的美味純蘋果原汁，採用約25顆的有機蘋果直接新鮮榨汁，非濃縮還原，完全保留蘋果的天然營養及原始風味。經由美國QAI有機認證，加工過程中不使用任何化學添加物、色素、人工香料、防腐劑等。果汁不添加糖，喝得到水果的天然甘甜風味，可以說是真真正正的純蘋果原汁。"/>
+        </Grid>
+        
+        <Grid Grid.Row="1" Margin="30,30,30,30">
+            <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,100,0,0" Padding="25,0,0,0" Text="阿彰有機純蘋果原汁" Width="300" Height="40" Background="Black" FontSize="28"  Foreground="White"/>
         </Grid>
     </Grid>
 </UserControl>
