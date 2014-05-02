@@ -33,7 +33,9 @@
         </Grid>
         
         <Grid Grid.Row="1" Margin="30,30,30,30">
-            <TextBlock Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,100,0,0" Padding="25,0,0,0" Text="阿彰有機純蘋果原汁" Width="300" Height="40" Background="Black" FontSize="28"  Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,100,0,0" Padding="25,0,0,0" Text="阿彰有機純蘋果原汁" Width="300" Height="40" Background="Black" FontSize="28"  Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="500,175,0,0" Text="{Binding Price}" Width="220" Height="40" Padding="10,0,0,0" Background="Black" FontSize="24" Foreground="White" />
+            <Controls:DrinkLogo HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,80,300,0" ImagePath="/Image/ShopCar.png" Width="200" Height="150"/>
         </Grid>
     </Grid>
 </UserControl>

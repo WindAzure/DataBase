@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,38 @@ namespace DataBaseProject.Forms
     /// <summary>
     /// Interaction logic for RecommendDrinkList.xaml
     /// </summary>
-    public partial class RecommendDrinkListForm : UserControl
+    public partial class RecommendDrinkListForm : UserControl,INotifyPropertyChanged
     {
+        private String _price;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(String name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public String Price
+        {
+            set
+            {
+                _price = value;
+                OnPropertyChanged("Price");
+            }
+            get
+            {
+                return _price;
+            }
+        }
+
         public RecommendDrinkListForm()
         {
             InitializeComponent();
+            DataContext = this;
+            String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/_appleJuice.txt", Encoding.UTF8);
+            Price = "建議售價：" + data[2] + " 元";
         }
 
         private void DrawTitle()
