@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataBaseProject.Controls;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,70 @@ namespace DataBaseProject.Forms
     /// <summary>
     /// Interaction logic for SpecialOfferDrinkListForm.xaml
     /// </summary>
-    public partial class SpecialOfferDrinkListForm : UserControl
+    public partial class SpecialOfferDrinkListForm : UserControl,INotifyPropertyChanged
     {
+        private String _price1;
+        private String _price2;
+        private String _price3;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(String name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+
+        public String Price1
+        {
+            set
+            {
+                _price1 = value;
+                OnPropertyChanged("Price1");
+            }
+            get
+            {
+                return _price1;
+            }
+        }
+
+        public String Price2
+        {
+            set
+            {
+                _price2 = value;
+                OnPropertyChanged("Price2");
+            }
+            get
+            {
+                return _price2;
+            }
+        }
+
+        public String Price3
+        {
+            set
+            {
+                _price3 = value;
+                OnPropertyChanged("Price3");
+            }
+            get
+            {
+                return _price3;
+            }
+        }
+
         public SpecialOfferDrinkListForm()
         {
             InitializeComponent();
+            DataContext = this;
+            String[] data1 = System.IO.File.ReadAllLines("../../DrinkInformation/_matchaTea.txt", Encoding.UTF8);
+            String[] data2 = System.IO.File.ReadAllLines("../../DrinkInformation/_tomatoeJuice.txt", Encoding.UTF8);
+            String[] data3 = System.IO.File.ReadAllLines("../../DrinkInformation/_waterMelonSmoothies.txt", Encoding.UTF8);
+            Price1 = "特價：" + data1[2] + " 元";
+            Price2 = "特價：" + data2[2] + " 元";
+            Price3 = "特價：" + data3[2] + " 元";
         }
 
         private void DrawTitle()
