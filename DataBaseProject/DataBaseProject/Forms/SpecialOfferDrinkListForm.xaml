@@ -29,26 +29,27 @@
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
 
+
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="/Image/Juice/Apple/pic1.png"  VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="蘋果汁" Width="110" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" Margin="107,426,97,28"/>
-                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" Margin="0,-80,0,0" ImagePath="/Image/ShopCar.png"/>
+                <Image Grid.Row="0" Source="/Image/SpecialPriceDrink/pic1.png"  VerticalAlignment="Center" Margin="0,60,0,0"/>
+                <TextBlock Grid.Row="0" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="西瓜冰沙" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
+                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
             </Grid>
-            
+
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="8*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="/Image/Juice/Grape/pic1.png"  VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="葡萄汁" Width="110" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" Margin="107,426,97,28"/>
-                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" Margin="0,-80,0,0" ImagePath="/Image/ShopCar.png"/>
+                <Image Grid.Row="0" Source="/Image/SpecialPriceDrink/pic2.png"  VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="西瓜冰沙" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
+                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
             </Grid>
 
             <Grid Grid.Column="2">
@@ -57,9 +58,9 @@
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
-                <Image Grid.Row="0" Source="/Image/Juice/GrapeFruit/pic1.png"  VerticalAlignment="Center"/>
-                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="葡萄柚汁" Width="110" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" Margin="107,426,97,28"/>
-                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" Margin="0,-80,0,0" ImagePath="/Image/ShopCar.png"/>
+                <Image Grid.Row="0" Source="/Image/SpecialPriceDrink/pic3.png"  VerticalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="西瓜冰沙" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
+                <Controls:DrinkLogo Grid.Row="1"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
             </Grid>
 
         </Grid>
