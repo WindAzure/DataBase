@@ -1,7 +1,6 @@
-﻿using DataBaseProject.Controls;
-using DataBaseProject.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,26 +10,27 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DataBaseProject
+namespace DataBaseProject.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for LoginPanel.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginPanel : UserControl
     {
-        public MainWindow()
+        public LoginPanel()
         {
             InitializeComponent();
-            PageSwitcher._maindow = this;
-            PageSwitcher.Switch(new LoginForm());
         }
 
-        public void Navigate(UserControl control)
+        private void ClickRegisterButton(object sender, RoutedEventArgs e)
         {
-            this.Content = control;
+            RegisterPanel panel = new RegisterPanel();
+            _contentGrid.Children.Add(panel);
         }
     }
 }

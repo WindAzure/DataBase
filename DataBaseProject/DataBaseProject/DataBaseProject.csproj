@@ -90,7 +90,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\LoginPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\PricePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\RegisterPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,8 +162,14 @@
     <Compile Include="Controls\IngredientPanel.xaml.cs">
       <DependentUpon>IngredientPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LoginPanel.xaml.cs">
+      <DependentUpon>LoginPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PricePanel.xaml.cs">
       <DependentUpon>PricePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RegisterPanel.xaml.cs">
+      <DependentUpon>RegisterPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\DrinkInformationForm.xaml.cs">
       <DependentUpon>DrinkInformationForm.xaml</DependentUpon>
