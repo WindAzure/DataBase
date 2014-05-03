@@ -509,6 +509,11 @@
   <ItemGroup>
     <Resource Include="Image\ShopCar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\SpecialPriceDrink\pic1.png" />
+    <Resource Include="Image\SpecialPriceDrink\pic2.png" />
+    <Resource Include="Image\SpecialPriceDrink\pic3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
