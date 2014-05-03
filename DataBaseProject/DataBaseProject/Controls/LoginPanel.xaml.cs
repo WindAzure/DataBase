@@ -22,6 +22,11 @@ namespace DataBaseProject.Controls
     /// </summary>
     public partial class LoginPanel : UserControl
     {
+        bool _removeFlag = false;
+        private RegisterPanel _panel;
+        public delegate void LoginPanelEvent(object sender, RoutedEventArgs e);
+        public event LoginPanelEvent OnRegisterButtonClick = null;
+
         public LoginPanel()
         {
             InitializeComponent();
@@ -29,8 +34,29 @@ namespace DataBaseProject.Controls
 
         private void ClickRegisterButton(object sender, RoutedEventArgs e)
         {
-            RegisterPanel panel = new RegisterPanel();
-            _contentGrid.Children.Add(panel);
+            _panel = new RegisterPanel();
+            _panel.OnEffectCompleted += OnEffectCompleted;
+            _contentGrid.Children.Add(_panel);
+
+            if (OnRegisterButtonClick != null)
+            {
+                OnRegisterButtonClick(sender, e);
+            }
+        }
+
+        void OnEffectCompleted(object sender, EventArgs e)
+        {
+            if (_removeFlag)
+            {
+                _contentGrid.Children.RemoveAt(1);
+                _removeFlag = false;
+            }
+        }
+
+        public void RestoreRegisterPanel()
+        {
+            _panel.RestoreAnimation();
+            _removeFlag = true;
         }
     }
 }

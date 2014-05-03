@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,12 +52,18 @@ namespace DataBaseProject.Forms
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
         {
-            PageSwitcher.Switch(new DrinkInformationForm());
+            _loginPanel.RestoreRegisterPanel();
+            _backButton.Visibility = Visibility.Hidden;
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        public void ClickRegisterButton(object sender, RoutedEventArgs e)
+        {
+            _backButton.Visibility = Visibility.Visible;
         }
     }
 }
