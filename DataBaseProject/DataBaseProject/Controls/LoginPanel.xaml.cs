@@ -26,6 +26,7 @@ namespace DataBaseProject.Controls
         private RegisterPanel _panel;
         public delegate void LoginPanelEvent(object sender, RoutedEventArgs e);
         public event LoginPanelEvent OnRegisterButtonClick = null;
+        public event LoginPanelEvent OnLoginButtonClick = null;
 
         public LoginPanel()
         {
@@ -41,6 +42,14 @@ namespace DataBaseProject.Controls
             if (OnRegisterButtonClick != null)
             {
                 OnRegisterButtonClick(sender, e);
+            }
+        }
+
+        private void ClickLoginButton(object sender, RoutedEventArgs e)
+        {
+            if (OnLoginButtonClick != null)
+            {
+                OnLoginButtonClick(sender, e);
             }
         }
 

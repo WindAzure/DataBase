@@ -65,5 +65,10 @@ namespace DataBaseProject.Forms
         {
             _backButton.Visibility = Visibility.Visible;
         }
+
+        public void ClickLoginButton(object sender, RoutedEventArgs e)
+        {
+            PageSwitcher.Switch(new DrinkInformationForm());
+        }
     }
 }

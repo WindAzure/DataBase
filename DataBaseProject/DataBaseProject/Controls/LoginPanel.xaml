@@ -25,7 +25,7 @@
                     </StackPanel>
                 
                     <StackPanel Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Center">
-                        <Button Width="80" Height="30" Content="登入" x:Name="_loginButton"/>
+                        <Button Width="80" Height="30" Content="登入" x:Name="_loginButton" Click="ClickLoginButton"/>
                         <Button Width="80" Height="30" Margin="20,0,0,0" Content="註冊" x:Name="_registerButton" Click="ClickRegisterButton"/>
                     </StackPanel>
                 
