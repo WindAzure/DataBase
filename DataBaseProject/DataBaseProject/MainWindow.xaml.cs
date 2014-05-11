@@ -25,7 +25,7 @@ namespace DataBaseProject
         {
             InitializeComponent();
             PageSwitcher._maindow = this;
-            PageSwitcher.Switch(new SpecialOfferDrinkListForm());
+            PageSwitcher.Switch(new ShopCarForm());
         }
 
         public void Navigate(UserControl control)
