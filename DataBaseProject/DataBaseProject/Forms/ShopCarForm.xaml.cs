@@ -62,10 +62,12 @@ namespace DataBaseProject.Forms
         private void AddItemOfShopCar(String name, int price, int quantity)
         {
             CloseButton button = new CloseButton();
+            _deleteStackPanel.Children.Add(button);
             button.Width=25;
             button.Height=25;
-            button.Margin=new Thickness(0,0,0,30);
-            _deleteStackPanel.Children.Add(button);
+            button.Margin = new Thickness(0, 0, 0, 30);
+            button.Name = "aaaa";
+            button.OnClick += OnButtonClick;
                 
             TextBlock block1=new TextBlock();
             block1.FontSize=18;
@@ -84,9 +86,31 @@ namespace DataBaseProject.Forms
             TextBox block3=new TextBox();
             block3.Width=50;
             block3.Height = 25;
-            block3.Text = quantity.ToString();
             block3.Margin=new Thickness(0,0,0,30);
+            block3.TextChanged += ChangedBlock3Text;
+            block3.Text = quantity.ToString();
             _quantityStackPanel.Children.Add(block3);
+        }
+
+        void OnButtonClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        void ChangedBlock3Text(object sender, TextChangedEventArgs e)
+        {
+            int total = 0;
+            int per = _quantityStackPanel.Children.Count;
+            for (int i = 0; i < per; i++)
+            {
+                TextBlock block = _priceStackPanel.Children[i] as TextBlock;
+                TextBox box=_quantityStackPanel.Children[i] as TextBox;
+                String[] number = block.Text.Split('元');
+                int n1 = Convert.ToInt32(number[0]);
+                int n2 = Convert.ToInt32(box.Text);
+                total += n1 * n2;
+            }
+            _totalPrice.Text = "總價：" + total.ToString() + "元";
         }
 
         private void LoadShopCarData()
