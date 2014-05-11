@@ -28,20 +28,20 @@
                 <ColumnDefinition Width="5*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,80,0">
                 <Image HorizontalAlignment="Left" Source="/Image/SpecialPriceDrink/pic1.png" Width="500" Margin="0,20,0,0"/>
 
-                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="-50,0,0,0">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Left" Text="油切抹茶" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
                     <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" Text="{Binding Price1}" Width="180" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White"/>
                     <Controls:DrinkLogo HorizontalAlignment="Left" Margin="0,20,0,0" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Column="1"  Orientation="Horizontal">
-                <Image Source="/Image/SpecialPriceDrink/pic2.png"  Width="500" Margin="-50,0,0,0"/>
+            <StackPanel Grid.Column="1"  Orientation="Horizontal" HorizontalAlignment="Left">
+                <Image Source="/Image/SpecialPriceDrink/pic2.png"  Width="500"/>
 
-                <StackPanel  Orientation="Vertical" VerticalAlignment="Center" Margin="-60,0,0,0">
+                <StackPanel  Orientation="Vertical" VerticalAlignment="Center">
                     <TextBlock HorizontalAlignment="Left" Text="番茄汁" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
                     <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" Text="{Binding Price2}" Width="180" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White"/>
                     <Controls:DrinkLogo HorizontalAlignment="Left" Margin="0,20,0,0" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
