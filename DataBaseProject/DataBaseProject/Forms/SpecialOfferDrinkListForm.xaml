@@ -23,29 +23,27 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                
-                <Image Source="/Image/SpecialPriceDrink/pic1.png" Width="500" Margin="0,20,0,0"/>
-                
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Image HorizontalAlignment="Left" Source="/Image/SpecialPriceDrink/pic1.png" Width="500" Margin="0,20,0,0"/>
+
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="-50,0,0,0">
                     <TextBlock HorizontalAlignment="Left" Text="油切抹茶" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
                     <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" Text="{Binding Price1}" Width="180" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White"/>
                     <Controls:DrinkLogo HorizontalAlignment="Left" Margin="0,20,0,0" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
                 </StackPanel>
+            </StackPanel>
 
+            <StackPanel Grid.Column="1"  Orientation="Horizontal">
                 <Image Source="/Image/SpecialPriceDrink/pic2.png"  Width="500" Margin="-50,0,0,0"/>
 
                 <StackPanel  Orientation="Vertical" VerticalAlignment="Center" Margin="-60,0,0,0">
                     <TextBlock HorizontalAlignment="Left" Text="番茄汁" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
                     <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" Text="{Binding Price2}" Width="180" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White"/>
-                    <Controls:DrinkLogo HorizontalAlignment="Left" Margin="0,20,0,0" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
-                </StackPanel>
-
-                <Image Source="/Image/SpecialPriceDrink/pic3.png" Width="500" Margin="-20,0,0,0"/>
-
-                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="-20,0,0,0">
-                    <TextBlock HorizontalAlignment="Left" Text="西瓜冰沙" Width="130" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White" />
-                    <TextBlock HorizontalAlignment="Left" Margin="0,20,0,0" Text="{Binding Price3}" Width="180" Padding="10,0,0,0" Background="Black" FontSize="28" Foreground="White"/>
                     <Controls:DrinkLogo HorizontalAlignment="Left" Margin="0,20,0,0" Width="100" Height="80" ImagePath="/Image/ShopCar.png"/>
                 </StackPanel>
             </StackPanel>
