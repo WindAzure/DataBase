@@ -62,46 +62,15 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel Grid.Column="1" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left">
-                                        <Controls:CloseButton Width="25" Height="25" Margin="0,0,0,30"/>
-                                        <Controls:CloseButton Width="25" Height="25" Margin="0,0,0,30"/>
-                                        <Controls:CloseButton Width="25" Height="25" Margin="0,0,0,30"/>
-                                        <Controls:CloseButton Width="25" Height="25" Margin="0,0,0,30"/>
-                                        
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" x:Name="_nameStackPanel" Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="蘋果汁" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="蘋果汁" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="蘋果汁" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="蘋果汁" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-
-                                        
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="2" x:Name="_priceStackPanel" Orientation="Vertical" HorizontalAlignment="Center">
-                                        <TextBlock Text="25元" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="25元" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="25元" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-                                        <TextBlock Text="25元" FontSize="18" Foreground="Gray" Margin="0,0,0,30"/>
-
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="3" x:Name="_quantityStackPanel" Orientation="Vertical"  HorizontalAlignment="Center">
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-                                        <TextBox Width="50" Height="25" Margin="0,0,0,30"/>
-
                                     </StackPanel>
                                 </Grid>
                             </ScrollViewer>

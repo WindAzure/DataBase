@@ -1,5 +1,10 @@
-﻿using System;
+﻿using DataBaseProject.Controls;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,10 +52,68 @@ namespace DataBaseProject.Forms
         public ShopCarForm()
         {
             InitializeComponent();
+            LoadShopCarData();
         }
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void AddItemOfShopCar(String name, int price, int quantity)
+        {
+            CloseButton button = new CloseButton();
+            button.Width=25;
+            button.Height=25;
+            button.Margin=new Thickness(0,0,0,30);
+            _deleteStackPanel.Children.Add(button);
+                
+            TextBlock block1=new TextBlock();
+            block1.FontSize=18;
+            block1.Foreground = Brushes.Gray;
+            block1.Text = name;
+            block1.Margin=new Thickness(0,0,0,30);
+            _nameStackPanel.Children.Add(block1);
+
+            TextBlock block2=new TextBlock();
+            block2.FontSize=18;
+            block2.Foreground=Brushes.Gray;
+            block2.Text = price.ToString()+"元";
+            block2.Margin=new Thickness(0,0,0,30);
+            _priceStackPanel.Children.Add(block2);
+            
+            TextBox block3=new TextBox();
+            block3.Width=50;
+            block3.Height = 25;
+            block3.Text = quantity.ToString();
+            block3.Margin=new Thickness(0,0,0,30);
+            _quantityStackPanel.Children.Add(block3);
+        }
+
+        private void LoadShopCarData()
+        {
+            /*SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT [Name],[Price],[Quantity] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has]  ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON  [Has].[FKName]=[Drink].[ENName] WHERE Account='Azure' and ConfirmState='False'", connection);
+
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+
+            int tableRow = dataSet.Tables[0].Rows.Count;
+            int tableColumn = dataSet.Tables[0].Columns.Count;
+            for (int i = 0; i < tableRow; i++)
+            {
+                AddItemOfShopCar(dataSet.Tables[0].Rows[i].ItemArray[0] as String, (int)dataSet.Tables[0].Rows[i].ItemArray[1], (int)dataSet.Tables[0].Rows[i].ItemArray[2]);
+            }*/
+            AddItemOfShopCar("蘋果汁", 152, 23);
+            AddItemOfShopCar("蘋果汁A", 88, 23);
+            AddItemOfShopCar("蘋果汁B", 3, 23);
+            AddItemOfShopCar("蘋果汁C", 2, 23);
+            AddItemOfShopCar("蘋果汁D", 55, 23);
+            AddItemOfShopCar("蘋果汁D", 55, 23);
+            AddItemOfShopCar("蘋果汁D", 55, 23);
+            AddItemOfShopCar("蘋果汁D", 55, 23);
+            AddItemOfShopCar("蘋果汁D", 55, 23);
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)
