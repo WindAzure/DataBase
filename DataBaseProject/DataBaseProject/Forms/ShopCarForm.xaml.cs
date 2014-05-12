@@ -102,7 +102,18 @@ namespace DataBaseProject.Forms
             block.Foreground = Brushes.White;
             block.Background = Brushes.Black;
 
-            int index=_deleteStackPanel.Children.IndexOf(block);
+            int index = _deleteStackPanel.Children.IndexOf(block);
+            TextBlock name = _nameStackPanel.Children[index] as TextBlock;
+            TextBlock price = _deleteStackPanel.Children[index] as TextBlock;
+            TextBox quantity = _quantityStackPanel.Children[index] as TextBox;
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Has] WHERE ([FKOid] IN (SELECT 	[Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([Quantity]=" + quantity.Text.Split('元')[0] + ") AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName WHERE Account='Azure' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
+            command.ExecuteScalar();
+            connection.Close();
+
             _deleteStackPanel.Children.RemoveAt(index);
             _nameStackPanel.Children.RemoveAt(index);
             _priceStackPanel.Children.RemoveAt(index);
@@ -143,11 +154,25 @@ namespace DataBaseProject.Forms
                 total += n1 * n2;
             }
             _totalPrice.Text = "總價：" + total.ToString() + "元";
+
+            TextBox quantity = sender as TextBox;
+            if (quantity != null)
+            {
+                int index = _quantityStackPanel.Children.IndexOf(quantity);
+                // TextBlock name = _nameStackPanel.Children[index] as TextBlock;
+                //   TextBlock price = _deleteStackPanel.Children[index] as TextBlock;
+            }
+            /*SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " +  + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='Azure' and ConfirmState='False' and Name='" + 蘋果汁 + "'))", connection);
+            command.ExecuteScalar();
+            connection.Close();*/
         }
 
         private void LoadShopCarData()
         {
-            /*SqlConnection connection = new SqlConnection();
+            SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT [Name],[Price],[Quantity] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has]  ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON  [Has].[FKName]=[Drink].[ENName] WHERE Account='Azure' and ConfirmState='False'", connection);
@@ -160,16 +185,8 @@ namespace DataBaseProject.Forms
             for (int i = 0; i < tableRow; i++)
             {
                 AddItemOfShopCar(dataSet.Tables[0].Rows[i].ItemArray[0] as String, (int)dataSet.Tables[0].Rows[i].ItemArray[1], (int)dataSet.Tables[0].Rows[i].ItemArray[2]);
-            }*/
-            AddItemOfShopCar("蘋果汁", 152, 23);
-            AddItemOfShopCar("蘋果汁A", 88, 23);
-            AddItemOfShopCar("蘋果汁B", 3, 23);
-            AddItemOfShopCar("蘋果汁C", 2, 23);
-            AddItemOfShopCar("蘋果汁D", 55, 23);
-            AddItemOfShopCar("蘋果汁D", 55, 23);
-            AddItemOfShopCar("蘋果汁D", 55, 23);
-            AddItemOfShopCar("蘋果汁D", 55, 23);
-            AddItemOfShopCar("蘋果汁D", 55, 23);
+            }
+            connection.Close();
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)
