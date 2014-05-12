@@ -65,12 +65,12 @@ namespace DataBaseProject.Forms
             deleteButton.FontSize = 18;
             deleteButton.Foreground = Brushes.Gray;
             deleteButton.Padding = new Thickness(5, 0, 5, 0);
-            deleteButton.Text = "刪除";
             deleteButton.Margin = new Thickness(0, 0, 0, 30);
             deleteButton.MouseEnter += MouseEnterDeleteButton;
             deleteButton.MouseLeave += MouseLeaveDeleteButton;
             deleteButton.MouseDown += MouseDownDeleteButton;
             deleteButton.MouseUp += MouseUpDeleteButton;
+            deleteButton.Text = "刪除";
             _deleteStackPanel.Children.Add(deleteButton);
 
             TextBlock block1 = new TextBlock();
@@ -193,26 +193,23 @@ namespace DataBaseProject.Forms
             _quantityScrollViewer.ScrollToVerticalOffset(_quantityScrollViewer.VerticalOffset - delta);
         }
 
-        private void PreviewMouseWheelDeleteScrollViewer(object sender, MouseWheelEventArgs e)
+        private void PreviewMouseWheelNameScrollViewer(object sender, MouseWheelEventArgs e)
         {
-
             WheelList(e.Delta);
         }
 
-        private void PreviewMouseWheelNameScrollViewer(object sender, MouseWheelEventArgs e)
+        private void PreviewMouseWheelDeleteScrollViewer(object sender, MouseWheelEventArgs e)
         {
             WheelList(e.Delta);
         }
 
         private void PreviewMouseWheelPriceScrollViewer(object sender, MouseWheelEventArgs e)
         {
-
             WheelList(e.Delta);
         }
 
         private void PreviewMouseWheelQuantityScrollViewer(object sender, MouseWheelEventArgs e)
         {
-
             WheelList(e.Delta);
         }
     }

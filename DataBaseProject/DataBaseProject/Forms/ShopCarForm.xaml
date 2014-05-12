@@ -61,18 +61,18 @@
                                             <ColumnDefinition Width="3*"/>
                                         </Grid.ColumnDefinitions>
 
-                                    <Grid Grid.Column="1">
-                                        <ScrollViewer x:Name="_deleteScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelDeleteScrollViewer">
-                                            <StackPanel Margin="-20,0,0,0" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left"/>
-                                        </ScrollViewer>
-                                    </Grid>
-
                                     <Grid  Grid.Column="1">
                                         <ScrollViewer x:Name="_nameScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelNameScrollViewer">
                                             <StackPanel x:Name="_nameStackPanel" Orientation="Vertical" HorizontalAlignment="Center"/>
                                         </ScrollViewer>
                                     </Grid>
 
+                                    <Grid Grid.Column="1" Margin="-20,0,0,0">
+                                        <ScrollViewer x:Name="_deleteScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelDeleteScrollViewer">
+                                            <StackPanel x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left"/>
+                                        </ScrollViewer>
+                                    </Grid>
+                                        
                                     <Grid Grid.Column="2">
                                         <ScrollViewer Grid.Column="2" x:Name="_priceScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelPriceScrollViewer">
                                             <StackPanel x:Name="_priceStackPanel" Orientation="Vertical" HorizontalAlignment="Center"/>
