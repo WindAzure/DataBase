@@ -189,6 +189,14 @@ namespace DataBaseProject.Forms
             TextBlock block = sender as TextBlock;
             block.Foreground = Brushes.White;
             block.Background = Brushes.Black;
+            if (MessageBox.Show("是否繼續購買？", "結帳成功", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                PageSwitcher.Switch(new DrinkInformationForm());
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
         }
 
         private void WheelList(double delta)

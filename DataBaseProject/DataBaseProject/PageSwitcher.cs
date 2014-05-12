@@ -10,6 +10,7 @@ namespace DataBaseProject
     public class PageSwitcher
     {
         public static MainWindow _maindow;
+        public static String _account;
 
         public static void Switch(UserControl control)
         {

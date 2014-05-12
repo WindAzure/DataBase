@@ -68,6 +68,7 @@ namespace DataBaseProject.Forms
 
         public void ClickLoginButton(object sender, RoutedEventArgs e)
         {
+            //PageSwitcher._account=
             PageSwitcher.Switch(new DrinkInformationForm());
         }
     }
