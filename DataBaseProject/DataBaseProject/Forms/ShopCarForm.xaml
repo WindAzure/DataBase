@@ -61,7 +61,7 @@
                                         <ColumnDefinition Width="3*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <StackPanel Grid.Column="1" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left">
+                                    <StackPanel Grid.Column="1" Margin="-20,0,0,0" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left">
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" x:Name="_nameStackPanel" Orientation="Vertical" HorizontalAlignment="Center">

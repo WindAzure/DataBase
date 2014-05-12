@@ -61,40 +61,66 @@ namespace DataBaseProject.Forms
 
         private void AddItemOfShopCar(String name, int price, int quantity)
         {
-            CloseButton button = new CloseButton();
-            _deleteStackPanel.Children.Add(button);
-            button.Width=25;
-            button.Height=25;
-            button.Margin = new Thickness(0, 0, 0, 30);
-            button.Name = "aaaa";
-            button.OnClick += OnButtonClick;
-                
-            TextBlock block1=new TextBlock();
-            block1.FontSize=18;
+            TextBlock deleteButton = new TextBlock();
+            deleteButton.FontSize = 18;
+            deleteButton.Foreground = Brushes.Gray;
+            deleteButton.Padding = new Thickness(5, 0, 5, 0);
+            deleteButton.Text = "刪除";
+            deleteButton.Margin = new Thickness(0, 0, 0, 30);
+            deleteButton.MouseEnter += MouseEnterDeleteButton;
+            deleteButton.MouseLeave += MouseLeaveDeleteButton;
+            deleteButton.MouseDown += MouseDownDeleteButton;
+            deleteButton.MouseUp += deleteButton_MouseUp;
+            _deleteStackPanel.Children.Add(deleteButton);
+
+            TextBlock block1 = new TextBlock();
+            block1.FontSize = 18;
             block1.Foreground = Brushes.Gray;
             block1.Text = name;
-            block1.Margin=new Thickness(0,0,0,30);
+            block1.Margin = new Thickness(0, 0, 0, 30);
             _nameStackPanel.Children.Add(block1);
 
-            TextBlock block2=new TextBlock();
-            block2.FontSize=18;
-            block2.Foreground=Brushes.Gray;
-            block2.Text = price.ToString()+"元";
-            block2.Margin=new Thickness(0,0,0,30);
+            TextBlock block2 = new TextBlock();
+            block2.FontSize = 18;
+            block2.Foreground = Brushes.Gray;
+            block2.Text = price.ToString() + "元";
+            block2.Margin = new Thickness(0, 0, 0, 30);
             _priceStackPanel.Children.Add(block2);
-            
-            TextBox block3=new TextBox();
-            block3.Width=50;
+
+            TextBox block3 = new TextBox();
+            block3.Width = 50;
             block3.Height = 25;
-            block3.Margin=new Thickness(0,0,0,30);
+            block3.Margin = new Thickness(0, 0, 0, 30);
             block3.TextChanged += ChangedBlock3Text;
             block3.Text = quantity.ToString();
             _quantityStackPanel.Children.Add(block3);
         }
 
-        void OnButtonClick(object sender, RoutedEventArgs e)
+        void deleteButton_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
+        }
+
+        void MouseDownDeleteButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Background = Brushes.LightGray;
+        }
+
+        void MouseLeaveDeleteButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Gray;
+            block.Background = Brushes.White;
+        }
+
+        void MouseEnterDeleteButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
         }
 
         void ChangedBlock3Text(object sender, TextChangedEventArgs e)
@@ -104,7 +130,7 @@ namespace DataBaseProject.Forms
             for (int i = 0; i < per; i++)
             {
                 TextBlock block = _priceStackPanel.Children[i] as TextBlock;
-                TextBox box=_quantityStackPanel.Children[i] as TextBox;
+                TextBox box = _quantityStackPanel.Children[i] as TextBox;
                 String[] number = block.Text.Split('元');
                 int n1 = Convert.ToInt32(number[0]);
                 int n2 = Convert.ToInt32(box.Text);
