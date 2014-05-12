@@ -52,28 +52,40 @@
                                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Text="數量" Width="65" Height="30" Padding="10,0,0,0" Background="Black" FontSize="20" Foreground="White"/>
                             </Grid>
 
-                            <ScrollViewer Grid.Row="1" Margin="0,10,0,0" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*"/>
-                                        <ColumnDefinition Width="3*"/>
-                                        <ColumnDefinition Width="3*"/>
-                                        <ColumnDefinition Width="3*"/>
-                                    </Grid.ColumnDefinitions>
+                            <Grid Grid.Row="1" Margin="0,10,0,0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                        </Grid.ColumnDefinitions>
 
-                                    <StackPanel Grid.Column="1" Margin="-20,0,0,0" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left">
-                                    </StackPanel>
+                                    <Grid Grid.Column="1">
+                                        <ScrollViewer x:Name="_deleteScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelDeleteScrollViewer">
+                                            <StackPanel Margin="-20,0,0,0" x:Name="_deleteStackPanel" Orientation="Vertical" HorizontalAlignment="Left"/>
+                                        </ScrollViewer>
+                                    </Grid>
 
-                                    <StackPanel Grid.Column="1" x:Name="_nameStackPanel" Orientation="Vertical" HorizontalAlignment="Center">
-                                    </StackPanel>
+                                    <Grid  Grid.Column="1">
+                                        <ScrollViewer x:Name="_nameScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelNameScrollViewer">
+                                            <StackPanel x:Name="_nameStackPanel" Orientation="Vertical" HorizontalAlignment="Center"/>
+                                        </ScrollViewer>
+                                    </Grid>
 
-                                    <StackPanel Grid.Column="2" x:Name="_priceStackPanel" Orientation="Vertical" HorizontalAlignment="Center">
-                                    </StackPanel>
+                                    <Grid Grid.Column="2">
+                                        <ScrollViewer Grid.Column="2" x:Name="_priceScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelPriceScrollViewer">
+                                            <StackPanel x:Name="_priceStackPanel" Orientation="Vertical" HorizontalAlignment="Center"/>
+                                        </ScrollViewer>
+                                    </Grid>
 
-                                    <StackPanel Grid.Column="3" x:Name="_quantityStackPanel" Orientation="Vertical"  HorizontalAlignment="Center">
-                                    </StackPanel>
+                                    <Grid Grid.Column="3">
+                                        <ScrollViewer x:Name="_quantityScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" PreviewMouseWheel="PreviewMouseWheelQuantityScrollViewer">
+                                            <StackPanel x:Name="_quantityStackPanel" Orientation="Vertical"  HorizontalAlignment="Center"/>
+                                        </ScrollViewer>
+                                    </Grid>
                                 </Grid>
-                            </ScrollViewer>
+                            </Grid>
                         </Grid>
 
                         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,30,0,0">

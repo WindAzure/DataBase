@@ -184,5 +184,36 @@ namespace DataBaseProject.Forms
             block.Foreground = Brushes.White;
             block.Background = Brushes.Black;
         }
+
+        private void WheelList(double delta)
+        {
+            _deleteScrollViewer.ScrollToVerticalOffset(_deleteScrollViewer.VerticalOffset - delta);
+            _nameScrollViewer.ScrollToVerticalOffset(_nameScrollViewer.VerticalOffset - delta);
+            _priceScrollViewer.ScrollToVerticalOffset(_priceScrollViewer.VerticalOffset - delta);
+            _quantityScrollViewer.ScrollToVerticalOffset(_quantityScrollViewer.VerticalOffset - delta);
+        }
+
+        private void PreviewMouseWheelDeleteScrollViewer(object sender, MouseWheelEventArgs e)
+        {
+
+            WheelList(e.Delta);
+        }
+
+        private void PreviewMouseWheelNameScrollViewer(object sender, MouseWheelEventArgs e)
+        {
+            WheelList(e.Delta);
+        }
+
+        private void PreviewMouseWheelPriceScrollViewer(object sender, MouseWheelEventArgs e)
+        {
+
+            WheelList(e.Delta);
+        }
+
+        private void PreviewMouseWheelQuantityScrollViewer(object sender, MouseWheelEventArgs e)
+        {
+
+            WheelList(e.Delta);
+        }
     }
 }
