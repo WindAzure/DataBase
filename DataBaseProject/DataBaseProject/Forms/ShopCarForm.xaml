@@ -84,6 +84,8 @@
                     </Grid>
                 </Border>
             </Grid>
+            <TextBlock x:Name="_checkButton" Margin="0,600,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="結帳" Padding="10,0,10,0" 
+                       Background="Black" FontSize="48" Foreground="White" MouseDown="MouseDownCheckButton" MouseUp="MouseUpCheckButton"/>
         </Grid>
     </Grid>
 </UserControl>

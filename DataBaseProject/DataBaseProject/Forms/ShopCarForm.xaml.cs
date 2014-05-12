@@ -70,7 +70,7 @@ namespace DataBaseProject.Forms
             deleteButton.MouseEnter += MouseEnterDeleteButton;
             deleteButton.MouseLeave += MouseLeaveDeleteButton;
             deleteButton.MouseDown += MouseDownDeleteButton;
-            deleteButton.MouseUp += deleteButton_MouseUp;
+            deleteButton.MouseUp += MouseUpDeleteButton;
             _deleteStackPanel.Children.Add(deleteButton);
 
             TextBlock block1 = new TextBlock();
@@ -96,7 +96,7 @@ namespace DataBaseProject.Forms
             _quantityStackPanel.Children.Add(block3);
         }
 
-        void deleteButton_MouseUp(object sender, MouseButtonEventArgs e)
+        void MouseUpDeleteButton(object sender, MouseButtonEventArgs e)
         {
             TextBlock block = sender as TextBlock;
             block.Foreground = Brushes.White;
@@ -169,6 +169,20 @@ namespace DataBaseProject.Forms
         private void ClickCloseButton(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void MouseDownCheckButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Black;
+            block.Background = Brushes.LightGray;
+        }
+
+        private void MouseUpCheckButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
         }
     }
 }
