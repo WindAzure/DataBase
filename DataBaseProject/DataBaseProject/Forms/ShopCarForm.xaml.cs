@@ -253,5 +253,15 @@ namespace DataBaseProject.Forms
         {
             WheelList(e.Delta);
         }
+
+        private void ChangedPsTextBoxText(object sender, TextChangedEventArgs e)
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='Azure' and ConfirmState='False'", connection);
+            command.ExecuteScalar();
+            connection.Close();
+        }
     }
 }
