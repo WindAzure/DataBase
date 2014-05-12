@@ -101,6 +101,12 @@ namespace DataBaseProject.Forms
             TextBlock block = sender as TextBlock;
             block.Foreground = Brushes.White;
             block.Background = Brushes.Black;
+
+            int index=_deleteStackPanel.Children.IndexOf(block);
+            _deleteStackPanel.Children.RemoveAt(index);
+            _nameStackPanel.Children.RemoveAt(index);
+            _priceStackPanel.Children.RemoveAt(index);
+            _quantityStackPanel.Children.RemoveAt(index);
         }
 
         void MouseDownDeleteButton(object sender, MouseButtonEventArgs e)
