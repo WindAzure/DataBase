@@ -25,6 +25,8 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class ShopCarForm : UserControl
     {
+        private bool _userTypeFlag = false;
+
         private void DrawTitle()
         {
             _title.Children.Clear();
@@ -104,7 +106,6 @@ namespace DataBaseProject.Forms
 
             int index = _deleteStackPanel.Children.IndexOf(block);
             TextBlock name = _nameStackPanel.Children[index] as TextBlock;
-            TextBlock price = _deleteStackPanel.Children[index] as TextBlock;
             TextBox quantity = _quantityStackPanel.Children[index] as TextBox;
 
             SqlConnection connection = new SqlConnection();
@@ -156,18 +157,18 @@ namespace DataBaseProject.Forms
             _totalPrice.Text = "總價：" + total.ToString() + "元";
 
             TextBox quantity = sender as TextBox;
-            if (quantity != null)
+            if (quantity != null && _userTypeFlag)
             {
                 int index = _quantityStackPanel.Children.IndexOf(quantity);
-                // TextBlock name = _nameStackPanel.Children[index] as TextBlock;
-                //   TextBlock price = _deleteStackPanel.Children[index] as TextBlock;
+                TextBlock name = _nameStackPanel.Children[index] as TextBlock;
+
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " + quantity.Text + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='Azure' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
+                command.ExecuteScalar();
+                connection.Close();
             }
-            /*SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-            connection.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " +  + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='Azure' and ConfirmState='False' and Name='" + 蘋果汁 + "'))", connection);
-            command.ExecuteScalar();
-            connection.Close();*/
         }
 
         private void LoadShopCarData()
@@ -187,6 +188,7 @@ namespace DataBaseProject.Forms
                 AddItemOfShopCar(dataSet.Tables[0].Rows[i].ItemArray[0] as String, (int)dataSet.Tables[0].Rows[i].ItemArray[1], (int)dataSet.Tables[0].Rows[i].ItemArray[2]);
             }
             connection.Close();
+            _userTypeFlag = true;
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)
@@ -206,6 +208,14 @@ namespace DataBaseProject.Forms
             TextBlock block = sender as TextBlock;
             block.Foreground = Brushes.White;
             block.Background = Brushes.Black;
+
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [ConfirmState] = 'true', [ConfirmDate] = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='Azure' and ConfirmState='False'", connection);
+            command.ExecuteScalar();
+            connection.Close();
+
             if (MessageBox.Show("是否繼續購買？", "結帳成功", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 PageSwitcher.Switch(new DrinkInformationForm());
