@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -68,8 +70,21 @@ namespace DataBaseProject.Forms
 
         public void ClickLoginButton(object sender, RoutedEventArgs e)
         {
-            //PageSwitcher._account=
-            PageSwitcher.Switch(new DrinkInformationForm());
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT	count(*) FROM [dbo].[Member] WHERE Account='"+_loginPanel.Account+"' and Password='"+_loginPanel.Password+"'", connection);
+            if (Convert.ToBoolean(command.ExecuteScalar()))
+            {
+                _loginPanel.NoticeMessage = "";
+                PageSwitcher._account = _loginPanel.Account;
+                PageSwitcher.Switch(new DrinkInformationForm());
+            }
+            else
+            {
+                _loginPanel.NoticeMessage = "帳號密碼錯誤，請重新輸入";
+            }
+            connection.Close();
         }
     }
 }

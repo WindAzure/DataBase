@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -20,17 +21,53 @@ namespace DataBaseProject.Controls
     /// <summary>
     /// Interaction logic for LoginPanel.xaml
     /// </summary>
-    public partial class LoginPanel : UserControl
+    public partial class LoginPanel : UserControl,INotifyPropertyChanged
     {
         bool _removeFlag = false;
         private RegisterPanel _panel;
+        public String _noticeMessage = "";
         public delegate void LoginPanelEvent(object sender, RoutedEventArgs e);
         public event LoginPanelEvent OnRegisterButtonClick = null;
         public event LoginPanelEvent OnLoginButtonClick = null;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(String name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
+        
+        public String Account
+        {
+            set;
+            get;
+        }
+
+        public String Password
+        {
+            set;
+            get;
+        }
+
+        public String NoticeMessage
+        {
+            set 
+            {
+                _noticeMessage = value;
+                OnPropertyChanged("NoticeMessage");
+            }
+            get
+            {
+                return _noticeMessage;
+            }
+        }
 
         public LoginPanel()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         private void ClickRegisterButton(object sender, RoutedEventArgs e)
@@ -49,6 +86,8 @@ namespace DataBaseProject.Controls
         {
             if (OnLoginButtonClick != null)
             {
+                Account = _accountBox.Text;
+                Password = _passwordBox.Password;
                 OnLoginButtonClick(sender, e);
             }
         }
