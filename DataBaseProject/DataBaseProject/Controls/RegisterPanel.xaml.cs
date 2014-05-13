@@ -91,9 +91,15 @@ namespace DataBaseProject.Controls
             MakeTranslateAnimation(0, 0);
         }
 
-        bool JudgeFormal(String account, String password, String phone, String address)
+        private bool CheckNoRepeatAccount(String account)
         {
-            return account.Length >= 4 && account.Length <= 9 && password.Length >= 4 && password.Length <= 9 && phone.Length != 0 && address.Length != 0;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT	count(*) FROM [dbo].[Member] WHERE Account='"+account+"'", connection);
+            Boolean flag = Convert.ToBoolean(command.ExecuteScalar());
+            connection.Close();
+            return !flag;
         }
 
         private void ClickSendButton(object sender, RoutedEventArgs e)
@@ -106,14 +112,21 @@ namespace DataBaseProject.Controls
                     {
                         if (_addressBox.Text.Length != 0 && OnClickSendButton != null)
                         {
-                            SqlConnection connection = new SqlConnection();
-                            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-                            connection.Open();
-                            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
-                            command.ExecuteScalar();
-                            connection.Close();
-                            MessageBox.Show("註冊成功！");
-                            OnClickSendButton(sender, e);
+                            if (CheckNoRepeatAccount(_accountBox.Text))
+                            {
+                                SqlConnection connection = new SqlConnection();
+                                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                                connection.Open();
+                                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
+                                command.ExecuteScalar();
+                                connection.Close();
+                                MessageBox.Show("註冊成功！");
+                                OnClickSendButton(sender, e);
+                            }
+                            else
+                            {
+                                MessageBox.Show("此帳號已存在");
+                            }
                         }
                         else
                         {
