@@ -136,10 +136,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\RegistForm.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Forms\SellInfomaionGraphicForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,9 +192,6 @@
     </Compile>
     <Compile Include="Forms\RecommendDrinkListForm.xaml.cs">
       <DependentUpon>RecommendDrinkListForm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RegistForm.xaml.cs">
-      <DependentUpon>RegistForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\SellInfomaionGraphicForm.xaml.cs">
       <DependentUpon>SellInfomaionGraphicForm.xaml</DependentUpon>

@@ -86,5 +86,11 @@ namespace DataBaseProject.Forms
             }
             connection.Close();
         }
+
+        public void ClickRegisterSendButton(object sender, RoutedEventArgs e)
+        {
+            _loginPanel.RestoreRegisterPanel();
+            _backButton.Visibility = Visibility.Hidden;
+        }
     }
 }

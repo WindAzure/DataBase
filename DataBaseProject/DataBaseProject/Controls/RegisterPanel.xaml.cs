@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +26,10 @@ namespace DataBaseProject.Controls
     {
         public delegate void RegisterPanelEvent(object sender, EventArgs e);
         public event RegisterPanelEvent OnEffectCompleted = null;
+        
+        public delegate void RegisterPanelEvent2(object sender,RoutedEventArgs e);
+        public event RegisterPanelEvent2 OnClickSendButton = null;
+        
 
         void MakeScaleAnimation(Double value1,Double value2)
         {
@@ -82,6 +89,29 @@ namespace DataBaseProject.Controls
             InitializeComponent();
             MakeScaleAnimation(1,1);
             MakeTranslateAnimation(0,0);
+        }
+
+        private void ClickSendButton(object sender, RoutedEventArgs e)
+        {
+            if (OnClickSendButton != null)
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                connection.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
+                command.ExecuteScalar();
+                connection.Close();
+                MessageBox.Show("註冊成功！");
+                OnClickSendButton(sender, e);
+            }
+        }
+
+        private void ClickClearButton(object sender, RoutedEventArgs e)
+        {
+            _accountBox.Text = "";
+            _passwordBox.Password = "";
+            _addressBox.Text = "";
+            _phoneBox.Text = "";
         }
     }
 }

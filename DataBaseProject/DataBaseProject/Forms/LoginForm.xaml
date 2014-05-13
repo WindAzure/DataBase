@@ -23,7 +23,7 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
-            <Controls:LoginPanel OnRegisterButtonClick="ClickRegisterButton" OnLoginButtonClick="ClickLoginButton" x:Name="_loginPanel"/>
+            <Controls:LoginPanel OnRegisterSendButtonClick="ClickRegisterSendButton"  OnRegisterButtonClick="ClickRegisterButton" OnLoginButtonClick="ClickLoginButton" x:Name="_loginPanel"/>
         </Grid>
     </Grid>
 </UserControl>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -21,7 +23,7 @@ namespace DataBaseProject.Controls
     /// <summary>
     /// Interaction logic for LoginPanel.xaml
     /// </summary>
-    public partial class LoginPanel : UserControl,INotifyPropertyChanged
+    public partial class LoginPanel : UserControl, INotifyPropertyChanged
     {
         bool _removeFlag = false;
         private RegisterPanel _panel;
@@ -29,6 +31,7 @@ namespace DataBaseProject.Controls
         public delegate void LoginPanelEvent(object sender, RoutedEventArgs e);
         public event LoginPanelEvent OnRegisterButtonClick = null;
         public event LoginPanelEvent OnLoginButtonClick = null;
+        public event LoginPanelEvent OnRegisterSendButtonClick = null;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void OnPropertyChanged(String name)
@@ -38,7 +41,7 @@ namespace DataBaseProject.Controls
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-        
+
         public String Account
         {
             set;
@@ -53,7 +56,7 @@ namespace DataBaseProject.Controls
 
         public String NoticeMessage
         {
-            set 
+            set
             {
                 _noticeMessage = value;
                 OnPropertyChanged("NoticeMessage");
@@ -74,7 +77,9 @@ namespace DataBaseProject.Controls
         {
             _panel = new RegisterPanel();
             _panel.OnEffectCompleted += OnEffectCompleted;
+            _panel.OnClickSendButton += OnClickPanelSendButton;
             _contentGrid.Children.Add(_panel);
+            _contentGrid.IsEnabled = false;
 
             if (OnRegisterButtonClick != null)
             {
@@ -94,6 +99,7 @@ namespace DataBaseProject.Controls
 
         void OnEffectCompleted(object sender, EventArgs e)
         {
+            _contentGrid.IsEnabled = true;
             if (_removeFlag)
             {
                 _contentGrid.Children.RemoveAt(1);
@@ -105,6 +111,14 @@ namespace DataBaseProject.Controls
         {
             _panel.RestoreAnimation();
             _removeFlag = true;
+        }
+
+        void OnClickPanelSendButton(object sender, RoutedEventArgs e)
+        {
+            if (OnRegisterSendButtonClick != null)
+            {
+                OnRegisterSendButtonClick(sender, e);
+            }
         }
     }
 }
