@@ -26,19 +26,19 @@ namespace DataBaseProject.Controls
     {
         public delegate void RegisterPanelEvent(object sender, EventArgs e);
         public event RegisterPanelEvent OnEffectCompleted = null;
-        
-        public delegate void RegisterPanelEvent2(object sender,RoutedEventArgs e);
-        public event RegisterPanelEvent2 OnClickSendButton = null;
-        
 
-        void MakeScaleAnimation(Double value1,Double value2)
+        public delegate void RegisterPanelEvent2(object sender, RoutedEventArgs e);
+        public event RegisterPanelEvent2 OnClickSendButton = null;
+
+
+        void MakeScaleAnimation(Double value1, Double value2)
         {
-            Storyboard board=new Storyboard();
+            Storyboard board = new Storyboard();
             DoubleAnimation animation1 = new DoubleAnimation();
             animation1.Duration = TimeSpan.FromMilliseconds(300);
             animation1.To = value1;
             board.Children.Add(animation1);
-            Storyboard.SetTargetProperty(animation1,new PropertyPath("RenderTransform.Children[0].ScaleX"));
+            Storyboard.SetTargetProperty(animation1, new PropertyPath("RenderTransform.Children[0].ScaleX"));
             Storyboard.SetTarget(animation1, _panel);
 
             DoubleAnimation animation2 = new DoubleAnimation();
@@ -50,7 +50,7 @@ namespace DataBaseProject.Controls
             board.Begin();
         }
 
-        void MakeTranslateAnimation(Double value1,Double value2)
+        void MakeTranslateAnimation(Double value1, Double value2)
         {
             Storyboard board = new Storyboard();
             board.Completed += board_Completed;
@@ -87,22 +87,52 @@ namespace DataBaseProject.Controls
         public RegisterPanel()
         {
             InitializeComponent();
-            MakeScaleAnimation(1,1);
-            MakeTranslateAnimation(0,0);
+            MakeScaleAnimation(1, 1);
+            MakeTranslateAnimation(0, 0);
+        }
+
+        bool JudgeFormal(String account, String password, String phone, String address)
+        {
+            return account.Length >= 4 && account.Length <= 9 && password.Length >= 4 && password.Length <= 9 && phone.Length != 0 && address.Length != 0;
         }
 
         private void ClickSendButton(object sender, RoutedEventArgs e)
         {
-            if (OnClickSendButton != null)
+            if (_accountBox.Text.Length >= 4 && _accountBox.Text.Length <= 9)
             {
-                SqlConnection connection = new SqlConnection();
-                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-                connection.Open();
-                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
-                command.ExecuteScalar();
-                connection.Close();
-                MessageBox.Show("註冊成功！");
-                OnClickSendButton(sender, e);
+                if (_passwordBox.Password.Length >= 4 && _passwordBox.Password.Length <= 9)
+                {
+                    if (_phoneBox.Text.Length != 0)
+                    {
+                        if (_addressBox.Text.Length != 0 && OnClickSendButton != null)
+                        {
+                            SqlConnection connection = new SqlConnection();
+                            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                            connection.Open();
+                            SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
+                            command.ExecuteScalar();
+                            connection.Close();
+                            MessageBox.Show("註冊成功！");
+                            OnClickSendButton(sender, e);
+                        }
+                        else
+                        {
+                            _messageBlock.Text = "地址欄位不可留白";
+                        }
+                    }
+                    else
+                    {
+                        _messageBlock.Text = "手機欄位不可留白";
+                    }
+                }
+                else
+                {
+                    _messageBlock.Text = "密碼至少四位，最長9位";
+                }
+            }
+            else
+            {
+                _messageBlock.Text = "帳號至少四位，最長9位";
             }
         }
 
