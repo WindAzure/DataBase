@@ -109,8 +109,8 @@ namespace DataBaseProject.Controls
                 SqlCommand command5 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity]) VALUES (('" + _drinkName.Substring(1, _drinkName.Length - 1) + "'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'))", connection);
                 command5.ExecuteScalar();
             }
-            PageSwitcher.Switch(new ShopCarForm());
             connection.Close();
+            PageSwitcher.Switch(new ShopCarForm());
         }
     }
 }
