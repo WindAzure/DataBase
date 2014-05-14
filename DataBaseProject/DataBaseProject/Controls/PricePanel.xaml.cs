@@ -23,6 +23,7 @@ namespace DataBaseProject.Controls
     /// </summary>
     public partial class PricePanel : UserControl, INotifyPropertyChanged
     {
+        private String _drinkName;
         private String _price;
         private String _calories;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -65,6 +66,7 @@ namespace DataBaseProject.Controls
         {
             InitializeComponent();
             DataContext = this;
+            _drinkName = fileName;
             String[] data = System.IO.File.ReadAllLines("../../DrinkInformation/" + fileName + ".txt", Encoding.UTF8);
             Calories = "熱量：" + data[1]+" 卡";
             Price = "建議售價："+data[2] + " 元";
@@ -80,6 +82,11 @@ namespace DataBaseProject.Controls
             Storyboard.SetTargetProperty(animation, new PropertyPath("RenderTransform.X"));
             Storyboard.SetTarget(animation, _pricePanel);
             board.Begin();
+        }
+
+        private void OnDrinkLogoItemMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine(_drinkName);
         }
     }
 }
