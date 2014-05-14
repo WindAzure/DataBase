@@ -25,8 +25,6 @@ namespace DataBaseProject.Forms
     /// </summary>
     public partial class ShopCarForm : UserControl
     {
-        private bool _userTypeFlag = false;
-
         private void DrawTitle()
         {
             _title.Children.Clear();
@@ -91,11 +89,11 @@ namespace DataBaseProject.Forms
             _priceStackPanel.Children.Add(block2);
 
             TextBox block3 = new TextBox();
+            block3.Text = quantity.ToString();
             block3.Width = 50;
             block3.Height = 25;
             block3.Margin = new Thickness(0, 0, 0, 30);
             block3.TextChanged += ChangedBlock3Text;
-            block3.Text = quantity.ToString();
             _quantityStackPanel.Children.Add(block3);
         }
 
@@ -142,23 +140,47 @@ namespace DataBaseProject.Forms
             block.Background = Brushes.Black;
         }
 
-        void ChangedBlock3Text(object sender, TextChangedEventArgs e)
+        bool SumUp(ref int total)
         {
-            int total = 0;
+            bool flag = false;
             int per = _quantityStackPanel.Children.Count;
             for (int i = 0; i < per; i++)
             {
                 TextBlock block = _priceStackPanel.Children[i] as TextBlock;
                 TextBox box = _quantityStackPanel.Children[i] as TextBox;
                 String[] number = block.Text.Split('元');
-                int n1 = Convert.ToInt32(number[0]);
-                int n2 = Convert.ToInt32(box.Text);
-                total += n1 * n2;
-            }
-            _totalPrice.Text = "總價：" + total.ToString() + "元";
 
+                try
+                {
+                    int n1 = Convert.ToInt32(number[0]);
+                    int n2 = Convert.ToInt32(box.Text);
+                    checked { total += n1 * n2; }
+                }
+                catch (Exception)
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+
+        void CalculateTotal()
+        {
+            int total = 0;
+            SumUp(ref total);
+            _totalPrice.Text = "總價：" + total.ToString() + "元";
+        }
+
+        void ChangedBlock3Text(object sender, TextChangedEventArgs e)
+        {
             TextBox quantity = sender as TextBox;
-            if (quantity != null && _userTypeFlag)
+            if (quantity.Text == "")
+            {
+                return;
+            }
+
+            int total = 0;
+            if (quantity != null && !SumUp(ref total))
             {
                 int index = _quantityStackPanel.Children.IndexOf(quantity);
                 TextBlock name = _nameStackPanel.Children[index] as TextBlock;
@@ -169,7 +191,24 @@ namespace DataBaseProject.Forms
                 SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " + quantity.Text + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
                 command.ExecuteScalar();
                 connection.Close();
+                _totalPrice.Text = "總價：" + total.ToString() + "元";
             }
+            else
+            {
+                quantity.Text = "";
+                _totalPrice.Text = "總價：";
+                MessageBox.Show("數量輸入錯誤");
+            }
+        }
+
+        void GetPS()
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command = new SqlCommand("SELECT [PS] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE Account='" + PageSwitcher._account + "' and ConfirmState='false'", connection);
+            _psTextBox.Text = command.ExecuteScalar() as String;
+            connection.Close();
         }
 
         private void LoadShopCarData()
@@ -188,8 +227,9 @@ namespace DataBaseProject.Forms
             {
                 AddItemOfShopCar(dataSet.Tables[0].Rows[i].ItemArray[0] as String, (int)dataSet.Tables[0].Rows[i].ItemArray[1], (int)dataSet.Tables[0].Rows[i].ItemArray[2]);
             }
+            CalculateTotal();
+            GetPS();
             connection.Close();
-            _userTypeFlag = true;
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)
@@ -206,24 +246,36 @@ namespace DataBaseProject.Forms
 
         private void MouseUpCheckButton(object sender, MouseButtonEventArgs e)
         {
-            TextBlock block = sender as TextBlock;
-            block.Foreground = Brushes.White;
-            block.Background = Brushes.Black;
-
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-            connection.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [ConfirmState] = 'true', [ConfirmDate] = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
-            command.ExecuteScalar();
-            connection.Close();
-
-            if (MessageBox.Show("是否繼續購買？", "結帳成功", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            int total = 0;
+            if (_psTextBox.Text.Length > 200)
             {
-                PageSwitcher.Switch(new DrinkInformationForm());
+                MessageBox.Show("飲品需求及意見長度不可超過200" + _psTextBox.Text.Length.ToString());
+            }
+            else if (SumUp(ref total))
+            {
+                MessageBox.Show("飲品需求及意見長度不可超過200");
             }
             else
             {
-                Environment.Exit(0);
+                TextBlock block = sender as TextBlock;
+                block.Foreground = Brushes.White;
+                block.Background = Brushes.Black;
+
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [ConfirmState] = 'true', [ConfirmDate] = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
+                command.ExecuteScalar();
+                connection.Close();
+
+                if (MessageBox.Show("是否繼續購買？", "結帳成功", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    PageSwitcher.Switch(new DrinkInformationForm());
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
             }
         }
 
@@ -257,12 +309,19 @@ namespace DataBaseProject.Forms
 
         private void ChangedPsTextBoxText(object sender, TextChangedEventArgs e)
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-            connection.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
-            command.ExecuteScalar();
-            connection.Close();
+            if (_psTextBox.Text.Length > 200)
+            {
+                MessageBox.Show("飲品需求及意見長度不可超過200");
+            }
+            else
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                connection.Open();
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
+                command.ExecuteScalar();
+                connection.Close();
+            }
         }
     }
 }
