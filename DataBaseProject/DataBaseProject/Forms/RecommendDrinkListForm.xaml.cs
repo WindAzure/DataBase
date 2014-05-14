@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +86,11 @@ namespace DataBaseProject.Forms
         private void ClickCloseButton(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void OnDrinkLogoItemMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Debug.WriteLine("A");
         }
     }
 }
