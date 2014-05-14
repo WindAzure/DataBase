@@ -117,7 +117,7 @@ namespace DataBaseProject.Controls
                                 SqlConnection connection = new SqlConnection();
                                 connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
                                 connection.Open();
-                                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "')", connection);
+                                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[Member] ([Account],[Password],[PhoneNumber],[Address],[IsAdmin]) VALUES ('" + _accountBox.Text + "','" + _passwordBox.Password + "','" + _phoneBox.Text + "','" + _addressBox.Text + "','False')", connection);
                                 command.ExecuteScalar();
                                 connection.Close();
                                 MessageBox.Show("註冊成功！");
