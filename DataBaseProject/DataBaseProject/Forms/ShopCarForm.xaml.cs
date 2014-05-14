@@ -111,7 +111,7 @@ namespace DataBaseProject.Forms
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
-            SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Has] WHERE ([FKOid] IN (SELECT 	[Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([Quantity]=" + quantity.Text.Split('元')[0] + ") AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName WHERE Account='Azure' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
+            SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Has] WHERE ([FKOid] IN (SELECT 	[Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False')) AND ([Quantity]=" + quantity.Text.Split('元')[0] + ") AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
             command.ExecuteScalar();
             connection.Close();
 
@@ -165,7 +165,7 @@ namespace DataBaseProject.Forms
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
                 connection.Open();
-                SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " + quantity.Text + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='Azure' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='Azure' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
+                SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET [Quantity] = " + quantity.Text + "WHERE	([FKOid] IN ( SELECT [Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False')) AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName	WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
                 command.ExecuteScalar();
                 connection.Close();
             }
@@ -176,7 +176,7 @@ namespace DataBaseProject.Forms
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
-            SqlDataAdapter adapter = new SqlDataAdapter("SELECT [Name],[Price],[Quantity] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has]  ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON  [Has].[FKName]=[Drink].[ENName] WHERE Account='Azure' and ConfirmState='False'", connection);
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT [Name],[Price],[Quantity] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has]  ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON  [Has].[FKName]=[Drink].[ENName] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
 
             DataSet dataSet = new DataSet();
             adapter.Fill(dataSet);
@@ -212,7 +212,7 @@ namespace DataBaseProject.Forms
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [ConfirmState] = 'true', [ConfirmDate] = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='Azure' and ConfirmState='False'", connection);
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [ConfirmState] = 'true', [ConfirmDate] = '" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss") + "', [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
             command.ExecuteScalar();
             connection.Close();
 
@@ -259,7 +259,7 @@ namespace DataBaseProject.Forms
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
-            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='Azure' and ConfirmState='False'", connection);
+            SqlCommand command = new SqlCommand("UPDATE [dbo].[OrderRecord] SET [PS] = '" + _psTextBox.Text + "' WHERE FKAccount='" + PageSwitcher._account + "' and ConfirmState='False'", connection);
             command.ExecuteScalar();
             connection.Close();
         }

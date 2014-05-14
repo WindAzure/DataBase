@@ -1,6 +1,9 @@
-﻿using System;
+﻿using DataBaseProject.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -86,7 +89,28 @@ namespace DataBaseProject.Controls
 
         private void OnDrinkLogoItemMouseUp(object sender, MouseButtonEventArgs e)
         {
-            Debug.WriteLine(_drinkName);
+            SqlConnection connection=new SqlConnection();
+            connection.ConnectionString=ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command1 = new SqlCommand("SELECT count(*) FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON [dbo].[Member].Account=[dbo].[OrderRecord].FKAccount WHERE Account='" + PageSwitcher._account + "' and ConfirmState='false'", connection);
+            if (Convert.ToBoolean(command1.ExecuteScalar()))
+            {
+                SqlCommand command2 = new SqlCommand("SELECT count(*) FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount inner join [dbo].[Has] ON Oid=FKOid inner join [dbo].[Drink] ON FKName=ENName WHERE Account='" + PageSwitcher._account + "' and ConfirmState='false' and ENName='" + _drinkName.Substring(1, _drinkName.Length - 1) + "'", connection);
+                if (!Convert.ToBoolean(command2.ExecuteScalar()))
+                {
+                    SqlCommand command3 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity]) VALUES (('"+_drinkName.Substring(1, _drinkName.Length - 1)+"'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='"+PageSwitcher._account+"' ),('1'))", connection);
+                    command3.ExecuteScalar();
+                }
+            }
+            else
+            {
+                SqlCommand command4 = new SqlCommand("INSERT INTO [dbo].[OrderRecord] ([Oid],[ConfirmState],[ConfirmDate],[DeliveryState],[PS],[FKAccount]) VALUES (NEWID(),'false',NULL,'false','','" + PageSwitcher._account + "')", connection);
+                command4.ExecuteScalar();
+                SqlCommand command5 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity]) VALUES (('" + _drinkName.Substring(1, _drinkName.Length - 1) + "'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'))", connection);
+                command5.ExecuteScalar();
+            }
+            PageSwitcher.Switch(new ShopCarForm());
+            connection.Close();
         }
     }
 }
