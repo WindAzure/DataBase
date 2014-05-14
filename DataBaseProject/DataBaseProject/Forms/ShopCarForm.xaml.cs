@@ -59,6 +59,7 @@ namespace DataBaseProject.Forms
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
         {
+            PageSwitcher.Switch(new DrinkInformationForm());
         }
 
         private void AddItemOfShopCar(String name, int price, int quantity)
