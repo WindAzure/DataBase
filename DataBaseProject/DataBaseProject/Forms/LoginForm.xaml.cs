@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -73,12 +74,21 @@ namespace DataBaseProject.Forms
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
             connection.Open();
-            SqlCommand command = new SqlCommand("SELECT	count(*) FROM [dbo].[Member] WHERE Account='"+_loginPanel.Account+"' and Password='"+_loginPanel.Password+"'", connection);
-            if (Convert.ToBoolean(command.ExecuteScalar()))
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT	[Account], [IsAdmin] FROM [dbo].[Member] WHERE Account='" + _loginPanel.Account + "' and Password='" + _loginPanel.Password + "'", connection);
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            if (dataSet.Tables[0].Rows.Count>0)
             {
                 _loginPanel.NoticeMessage = "";
                 PageSwitcher._account = _loginPanel.Account;
-                PageSwitcher.Switch(new DrinkInformationForm());
+                if (Convert.ToBoolean(dataSet.Tables[0].Rows[0].ItemArray[1]))
+                {
+                    PageSwitcher.Switch(new ManagerHomeForm());
+                }
+                else
+                {
+                    PageSwitcher.Switch(new DrinkInformationForm());
+                }
             }
             else
             {
