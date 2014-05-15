@@ -51,6 +51,7 @@ namespace DataBaseProject.Forms
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
         {
+            PageSwitcher.Switch(new LoginForm());
         }
 
         private void ClickCloseButton(object sender, RoutedEventArgs e)

@@ -16,7 +16,7 @@
         <Grid Grid.Row="0">
             <Canvas x:Name="_title" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
             <StackPanel HorizontalAlignment="Left" Margin="30,0,0,0" Orientation="Horizontal">
-                <Controls:BackButton Height="30" Width="30" OnClick="ClickBackButton" Visibility="Hidden"/>
+                <Controls:BackButton Height="30" Width="30" OnClick="ClickBackButton"/>
                 <TextBlock Text="阿彰飲料店" Padding="20,10,0,0" Margin="30,0,0,0" Foreground="White" Background="Black" FontSize="36" Width="220"/>
             </StackPanel>
             <Controls:CloseButton Height="30" Width="30" Margin="0,0,30,0" OnClick="ClickCloseButton" HorizontalAlignment="Right"/>
