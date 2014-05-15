@@ -99,25 +99,33 @@ namespace DataBaseProject.Forms
 
         void MouseUpDeleteButton(object sender, MouseButtonEventArgs e)
         {
-            TextBlock block = sender as TextBlock;
-            block.Foreground = Brushes.White;
-            block.Background = Brushes.Black;
+            int total=0;
+            if (!SumUp(ref total))
+            {
+                TextBlock block = sender as TextBlock;
+                block.Foreground = Brushes.White;
+                block.Background = Brushes.Black;
 
-            int index = _deleteStackPanel.Children.IndexOf(block);
-            TextBlock name = _nameStackPanel.Children[index] as TextBlock;
-            TextBox quantity = _quantityStackPanel.Children[index] as TextBox;
+                int index = _deleteStackPanel.Children.IndexOf(block);
+                TextBlock name = _nameStackPanel.Children[index] as TextBlock;
+                TextBox quantity = _quantityStackPanel.Children[index] as TextBox;
 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
-            connection.Open();
-            SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Has] WHERE ([FKOid] IN (SELECT 	[Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False')) AND ([Quantity]=" + quantity.Text.Split('元')[0] + ") AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
-            command.ExecuteScalar();
-            connection.Close();
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+                connection.Open();
+                SqlCommand command = new SqlCommand("DELETE FROM [dbo].[Has] WHERE ([FKOid] IN (SELECT 	[Oid] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False')) AND ([Quantity]=" + quantity.Text + ") AND ([FKName] IN (SELECT [FKName] FROM [Member] inner join [OrderRecord] ON [Member].[Account]=[OrderRecord].[FKAccount] inner join [Has] ON [OrderRecord].[Oid]=[Has].[FKOid] inner join [Drink] ON [Has].FKName=[Drink].ENName WHERE Account='" + PageSwitcher._account + "' and ConfirmState='False' and Name='" + name.Text + "'))", connection);
+                command.ExecuteScalar();
+                connection.Close();
 
-            _deleteStackPanel.Children.RemoveAt(index);
-            _nameStackPanel.Children.RemoveAt(index);
-            _priceStackPanel.Children.RemoveAt(index);
-            _quantityStackPanel.Children.RemoveAt(index);
+                _deleteStackPanel.Children.RemoveAt(index);
+                _nameStackPanel.Children.RemoveAt(index);
+                _priceStackPanel.Children.RemoveAt(index);
+                _quantityStackPanel.Children.RemoveAt(index);
+            }
+            else
+            {
+                MessageBox.Show("數量輸入錯誤");
+            }
         }
 
         void MouseDownDeleteButton(object sender, MouseButtonEventArgs e)
@@ -173,13 +181,8 @@ namespace DataBaseProject.Forms
 
         void ChangedBlock3Text(object sender, TextChangedEventArgs e)
         {
-            TextBox quantity = sender as TextBox;
-            if (quantity.Text == "")
-            {
-                return;
-            }
-
             int total = 0;
+            TextBox quantity = sender as TextBox;
             if (quantity != null && !SumUp(ref total))
             {
                 int index = _quantityStackPanel.Children.IndexOf(quantity);
@@ -246,21 +249,21 @@ namespace DataBaseProject.Forms
 
         private void MouseUpCheckButton(object sender, MouseButtonEventArgs e)
         {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
+
             int total = 0;
             if (_psTextBox.Text.Length > 200)
             {
-                MessageBox.Show("飲品需求及意見長度不可超過200" + _psTextBox.Text.Length.ToString());
+                MessageBox.Show("飲品需求及意見長度不可超過200");
             }
             else if (SumUp(ref total))
             {
-                MessageBox.Show("飲品需求及意見長度不可超過200");
+                MessageBox.Show("數量輸入錯誤");
             }
             else
             {
-                TextBlock block = sender as TextBlock;
-                block.Foreground = Brushes.White;
-                block.Background = Brushes.Black;
-
                 SqlConnection connection = new SqlConnection();
                 connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
                 connection.Open();
