@@ -256,6 +256,10 @@ namespace DataBaseProject.Forms
             {
                 MessageBox.Show("請先選擇欲購買之飲料");
             }
+            else if (total == 0)
+            {
+                MessageBox.Show("數量不可為零"); 
+            }
             else
             {
                 SqlConnection connection = new SqlConnection();
