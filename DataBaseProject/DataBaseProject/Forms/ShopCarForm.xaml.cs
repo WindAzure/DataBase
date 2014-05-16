@@ -190,7 +190,6 @@ namespace DataBaseProject.Forms
             }
             else
             {
-                quantity.Text = "";
                 _totalPrice.Text = "總價：";
             }
         }

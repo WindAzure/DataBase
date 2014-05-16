@@ -77,7 +77,7 @@
                         <Image Grid.Row="1" Source="/Image/Smoothie/PineApple/pic1.png" Stretch="Fill"/>
                     </Grid>
 
-                    <Grid MouseDown="OnMouseDownGrid" x:Name="_waterMelonJuice">
+                    <Grid MouseDown="OnMouseDownGrid" x:Name="_waterMelonSmoothies">
                         <Grid.RenderTransform>
                             <TranslateTransform/>
                         </Grid.RenderTransform>
