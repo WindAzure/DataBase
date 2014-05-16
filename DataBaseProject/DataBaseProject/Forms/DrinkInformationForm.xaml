@@ -23,36 +23,27 @@
         </Grid>
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
 
-            <Grid Grid.Column="0">
-                <Controls:DrinkLogo OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/Special.png"/>
+            <Grid Grid.Row="0">
+                <Controls:DrinkLogo Grid.Column="0" Width="500" Height="300" Margin="300,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/Special.png"/>
+                <Controls:DrinkLogo Grid.Column="1" Width="500" Height="300" Margin="600,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/Recommend.png"/>
             </Grid>
 
-            <Grid  Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="5*"/>
-                </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
 
-                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/Recommend.png"/>
-                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnTeaImageMouseUp" ImagePath="/Image/Tea/FrontCover.jpg"/>
+                <Controls:DrinkLogo Grid.Column="0" OnItemMouseUp="OnTeaImageMouseUp" ImagePath="/Image/Tea/FrontCover.jpg"/>
+                <Controls:DrinkLogo Grid.Column="1" OnItemMouseUp="OnJuiceImageMouseUp" ImagePath="/Image/Juice/FrontCover.png"/>
+                <Controls:DrinkLogo Grid.Column="2" OnItemMouseUp="OnSmoothieImageMouseUp" ImagePath="/Image/Smoothie/FrontCover.png"/>
             </Grid>
-
-            <Grid  Grid.Column="2">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="5*"/>
-                </Grid.RowDefinitions>
-
-                <Controls:DrinkLogo Grid.Row="0" OnItemMouseUp="OnJuiceImageMouseUp" ImagePath="/Image/Juice/FrontCover.png"/>
-                <Controls:DrinkLogo Grid.Row="1" OnItemMouseUp="OnSmoothieImageMouseUp" ImagePath="/Image/Smoothie/FrontCover.png"/>
-            </Grid>
-
         </Grid>
     </Grid>
 </UserControl>
