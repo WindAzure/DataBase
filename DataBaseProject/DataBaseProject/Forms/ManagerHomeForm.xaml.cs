@@ -58,5 +58,15 @@ namespace DataBaseProject.Forms
         {
             Environment.Exit(0);
         }
+
+        private void OnDrinkGraphicItemMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            PageSwitcher.Switch(new SellInfomaionGraphicForm());
+        }
+
+        private void OnOrderRecordItemMouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
