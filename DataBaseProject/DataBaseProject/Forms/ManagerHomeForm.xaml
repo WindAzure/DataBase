@@ -24,8 +24,8 @@
 
         <Grid Grid.Row="1" Margin="30,30,30,30">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
-                <Controls:DrinkLogo ImagePath="/Image/CheckOrderRecord.png" Margin="0,0,200,0" OnItemMouseUp="OnDrinkGraphicItemMouseUp"/>
-                <Controls:DrinkLogo ImagePath="/Image/SaleGraphic.png" OnItemMouseUp="OnOrderRecordItemMouseUp"/>
+                <Controls:DrinkLogo ImagePath="/Image/CheckOrderRecord.png" Margin="0,0,200,0" OnItemMouseUp="OnOrderRecordItemMouseUp"/>
+                <Controls:DrinkLogo ImagePath="/Image/SaleGraphic.png" OnItemMouseUp="OnDrinkGraphicItemMouseUp"/>
             </StackPanel>
         </Grid>
     </Grid>
