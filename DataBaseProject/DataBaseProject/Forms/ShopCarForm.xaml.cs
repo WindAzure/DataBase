@@ -324,5 +324,19 @@ namespace DataBaseProject.Forms
                 connection.Close();
             }
         }
+
+        private void MouseEnterCheckButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Gray;
+            block.Background = Brushes.White;
+        }
+
+        private void MouseLeaveCheckButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
+        }
     }
 }
