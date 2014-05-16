@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -83,6 +85,31 @@ namespace DataBaseProject.Forms
         private void ClickCloseButton(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void MouseUpCheckButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
+            connection.Open();
+            SqlCommand command1 = new SqlCommand("SELECT count(*) FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON [dbo].[Member].Account=[dbo].[OrderRecord].FKAccount WHERE Account='" + PageSwitcher._account + "' and ConfirmState='false'", connection);
+            if (!Convert.ToBoolean(command1.ExecuteScalar()))
+            {
+                SqlCommand command2 = new SqlCommand("INSERT INTO [dbo].[OrderRecord] ([Oid],[ConfirmState],[ConfirmDate],[DeliveryState],[PS],[FKAccount]) VALUES (NEWID(),'false',NULL,'false','','" + PageSwitcher._account + "')", connection);
+                command2.ExecuteScalar();
+            }
+            connection.Close();
+            PageSwitcher.Switch(new ShopCarForm());
+        }
+
+        private void MouseDownCheckButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Black;
+            block.Background = Brushes.LightGray;
         }
     }
 }
