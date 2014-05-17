@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:Controls="clr-namespace:DataBaseProject.Controls"
-             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="DataBaseProject.Forms.SellInfomaionGraphicForm" 
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:NTUT_DataBaseDataSetTableAdapters="clr-namespace:DataBaseProject.NTUT_DataBaseDataSetTableAdapters" xmlns:DataBaseProject="clr-namespace:DataBaseProject" x:Class="DataBaseProject.Forms.SellInfomaionGraphicForm" 
              mc:Ignorable="d"
              d:DesignHeight="750" d:DesignWidth="1000">
+
+    <UserControl.Resources>
+        <dx:TypedSimpleSource x:Key="TypedSimpleSource" AdapterType="{x:Type NTUT_DataBaseDataSetTableAdapters:Drink1TableAdapter}" ContextType="{x:Type DataBaseProject:NTUT_DataBaseDataSet}" Path="Drink1">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+        </dx:TypedSimpleSource>
+    </UserControl.Resources>
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -23,12 +31,24 @@
             <Controls:CloseButton Height="30" Width="30" Margin="0,0,30,0" OnClick="ClickCloseButton" HorizontalAlignment="Right"/>
         </Grid>
 
-        <dxc:ChartControl Grid.Row="1" Margin="100,100,100,100" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <dxc:ChartControl Grid.Row="1" Margin="100,100,100,100" HorizontalAlignment="Left" VerticalAlignment="Top" DataSource="{Binding Data, Source={StaticResource TypedSimpleSource}}">
+            <dxc:ChartControl.CrosshairOptions>
+                <dxc:CrosshairOptions ShowArgumentLabels="True" ShowValueLabels="True" ShowValueLine="True"/>
+            </dxc:ChartControl.CrosshairOptions>
             <dxc:ChartControl.Legend>
-                <dxc:Legend/>
+                <dxc:Legend />
             </dxc:ChartControl.Legend>
-            <dxc:XYDiagram2D>
-                <dxc:BarSideBySideSeries2D DisplayName="Series 1"/>
+            <dxc:XYDiagram2D SeriesDataMember="Name">
+                <dxc:XYDiagram2D.AxisX>
+                    <dxc:AxisX2D>
+                        <dxc:AxisX2D.Label>
+                            <dxc:AxisLabel Staggered="True"/>
+                        </dxc:AxisX2D.Label>
+                    </dxc:AxisX2D>
+                </dxc:XYDiagram2D.AxisX>
+                <dxc:XYDiagram2D.SeriesTemplate>
+                    <dxc:BarSideBySideSeries2D DisplayName="Series 1" ArgumentDataMember="Name" ValueDataMember="Expr1"/>
+                </dxc:XYDiagram2D.SeriesTemplate>
             </dxc:XYDiagram2D>
         </dxc:ChartControl>
     </Grid>
