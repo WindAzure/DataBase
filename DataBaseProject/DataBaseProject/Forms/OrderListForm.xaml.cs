@@ -66,6 +66,7 @@ namespace DataBaseProject.Forms
         {
             InitializeComponent();
             _orderListGrid.ExpandAllGroups();
+            _dateColumn.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
         }
 
         private void ClickBackButton(object sender, RoutedEventArgs e)
@@ -150,11 +151,10 @@ namespace DataBaseProject.Forms
             DataRowView selectRow = _orderListGrid.GetFocusedRow() as DataRowView;
 
             String account = selectRow.Row.ItemArray[0].ToString();
-            String date = (Convert.ToDateTime(selectRow.Row.ItemArray[1].ToString())).ToString("yyyy/MM/dd HH:mm:ss") + ".000";
+            String date = (Convert.ToDateTime(selectRow.Row.ItemArray[1].ToString())).ToString("yyyy-MM-dd HH:mm:ss") + ".000";
             String ps = selectRow.Row.ItemArray[2].ToString();
             String drinkName = selectRow.Row.ItemArray[4].ToString();
             String quantity = selectRow.Row.ItemArray[5].ToString();
-
 
             SqlConnection connection = new SqlConnection();
             connection.ConnectionString = ConfigurationManager.ConnectionStrings["DataBaseProject.Properties.Settings.NTUT_DataBaseConnectionString"].ConnectionString;
@@ -162,6 +162,35 @@ namespace DataBaseProject.Forms
             SqlCommand command = new SqlCommand("UPDATE [dbo].[Has] SET	[MakeState]='" + box.IsChecked.ToString() + "' WHERE ([FKOid] IN ( SELECT OrderRecord.Oid FROM [dbo].OrderRecord WHERE FKAccount='" + account + "' and ConfirmDate='" + date + "' and PS='"+ps+"' and ConfirmState='true')) and ([FKName]='" + GetMapping(drinkName) + "') and ([Quantity]='" + quantity + "')", connection);
             command.ExecuteScalar();
             connection.Close();
+        }
+
+        private void MouseUpRefreshButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
+            PageSwitcher.Switch(new OrderListForm());
+        }
+
+        private void MouseDownRefreshButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Black;
+            block.Background = Brushes.LightGray;
+        }
+
+        private void MouseEnterRefreshButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.Gray;
+            block.Background = Brushes.White;
+        }
+
+        private void MouseLeaveRefreshButton(object sender, MouseEventArgs e)
+        {
+            TextBlock block = sender as TextBlock;
+            block.Foreground = Brushes.White;
+            block.Background = Brushes.Black;
         }
     }
 }

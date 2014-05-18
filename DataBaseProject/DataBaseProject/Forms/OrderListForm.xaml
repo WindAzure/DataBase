@@ -28,6 +28,25 @@
                 <ComponentModel:SortDescription Direction="Ascending" PropertyName="Quantity"/>
             </dx:TypedCollectionViewSource.SortDescriptions>
         </dx:TypedCollectionViewSource>
+        <dx:TypedCollectionViewSource x:Key="TypedCollectionViewSource1" AdapterType="{x:Type NTUT_DataBaseDataSetTableAdapters:DataTable1TableAdapter}" Culture="en-US" ContextType="{x:Type DataBaseProject:NTUT_DataBaseDataSet}" CollectionViewType="{x:Type ListCollectionView}" Path="DataTable1">
+            <dx:DesignDataManager.DesignData>
+                <dx:DesignDataSettings RowCount="5"/>
+            </dx:DesignDataManager.DesignData>
+            <dx:TypedCollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription PropertyName="ConfirmDate"/>
+                <PropertyGroupDescription PropertyName="FKAccount"/>
+                <PropertyGroupDescription PropertyName="PS"/>
+                <PropertyGroupDescription PropertyName="Total"/>
+            </dx:TypedCollectionViewSource.GroupDescriptions>
+            <dx:TypedCollectionViewSource.SortDescriptions>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="ConfirmDate"/>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="FKAccount"/>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="PS"/>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="Total"/>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="Name"/>
+                <ComponentModel:SortDescription Direction="Ascending" PropertyName="Quantity"/>
+            </dx:TypedCollectionViewSource.SortDescriptions>
+        </dx:TypedCollectionViewSource>
     </UserControl.Resources>
 
     <Grid Background="White">
@@ -42,27 +61,30 @@
                 <Controls:BackButton Height="30" Width="30" OnClick="ClickBackButton"/>
                 <TextBlock Text="阿彰飲料店" Padding="20,10,0,0" Margin="30,0,0,0" Foreground="White" Background="Black" FontSize="36" Width="220"/>
             </StackPanel>
+            <TextBlock x:Name="_refreshButton" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,200,0" Text="重新整理" Padding="10,0,10,0" 
+                       Background="Black" FontSize="30" Foreground="White" MouseDown="MouseDownRefreshButton" MouseUp="MouseUpRefreshButton"
+                       MouseEnter="MouseEnterRefreshButton" MouseLeave="MouseLeaveRefreshButton"/>
             <Controls:CloseButton Height="30" Width="30" Margin="0,0,30,0" OnClick="ClickCloseButton" HorizontalAlignment="Right"/>
         </Grid>
 
-        <dxg:GridControl Grid.Row="1" Width="700" x:Name="_orderListGrid" ColumnsPopulated="ColumnsPopulatedGridControl" HorizontalAlignment="Center"  VerticalAlignment="Center" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" ItemsSource="{Binding Data, Source={StaticResource TypedCollectionViewSource}}">
+        <dxg:GridControl Grid.Row="1" Width="700" x:Name="_orderListGrid" ColumnsPopulated="ColumnsPopulatedGridControl" HorizontalAlignment="Center"  VerticalAlignment="Center" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" ItemsSource="{Binding Data, Source={StaticResource TypedCollectionViewSource1}}">
             <dxg:GridControl.Columns>
-                <dxg:GridColumn FieldName="FKAccount" IsSmart="True" VisibleIndex="0" AllowEditing="False" Header="會員" GroupIndex="0" SortOrder="Ascending"/>
-                <dxg:GridColumn FieldName="ConfirmDate" IsSmart="True" VisibleIndex="1" AllowEditing="False" Header="結帳日期" GroupIndex="1" SortOrder="Ascending"/>
+                <dxg:GridColumn FieldName="FKAccount" IsSmart="True" VisibleIndex="0" AllowEditing="False" Header="會員" GroupIndex="1" SortOrder="Ascending"/>
+                <dxg:GridColumn x:Name="_dateColumn" FieldName="ConfirmDate" IsSmart="True" VisibleIndex="1" AllowEditing="False" Header="結帳日期" GroupIndex="0" SortOrder="Descending"/>
                 <dxg:GridColumn FieldName="PS" IsSmart="True" VisibleIndex="2" AllowEditing="False" Header="顧客需求及意見" GroupIndex="2" SortOrder="Ascending"/>
-                <dxg:GridColumn FieldName="MakeState" IsSmart="True" VisibleIndex="3" Header="製作狀態" HorizontalHeaderContentAlignment="Center" SortOrder="Ascending" Width="10">
+                <dxg:GridColumn FieldName="MakeState" IsSmart="True" VisibleIndex="0" Header="製作狀態" HorizontalHeaderContentAlignment="Center" Width="10">
                     <dxg:GridColumn.EditSettings>
                         <dxe:TextEditSettings HorizontalContentAlignment="Center"/>
                     </dxg:GridColumn.EditSettings>
-
+ 
                     <dxg:GridColumn.EditTemplate>
                         <ControlTemplate>
                             <CheckBox HorizontalAlignment="Center" Click="CheckBox_Click" IsChecked="{Binding EditValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                         </ControlTemplate>
                     </dxg:GridColumn.EditTemplate>
                 </dxg:GridColumn>
-                <dxg:GridColumn FieldName="Name" IsSmart="True" VisibleIndex="4" AllowEditing="False" Header="飲品名稱" HorizontalHeaderContentAlignment="Center"/>
-                <dxg:GridColumn FieldName="Quantity" IsSmart="True" VisibleIndex="5" AllowEditing="False" Header="飲品數量" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn FieldName="Name" IsSmart="True" VisibleIndex="1" AllowEditing="False" Header="飲品名稱" HorizontalHeaderContentAlignment="Center"/>
+                <dxg:GridColumn FieldName="Quantity" IsSmart="True" VisibleIndex="2" AllowEditing="False" Header="飲品數量" HorizontalHeaderContentAlignment="Center"/>
                 <dxg:GridColumn FieldName="Total" IsSmart="True" VisibleIndex="6" AllowEditing="False" Header="消費金額" GroupIndex="3" SortOrder="Ascending"/>
             </dxg:GridControl.Columns>
             <dxg:GridControl.View>
