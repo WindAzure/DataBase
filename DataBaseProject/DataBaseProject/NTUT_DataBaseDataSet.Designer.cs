@@ -34,7 +34,7 @@ namespace DataBaseProject {
         
         private Drink1DataTable tableDrink1;
         
-        private MasterGridViewSelectCommandDataTable tableMasterGridViewSelectCommand;
+        private DataTable1DataTable tableDataTable1;
         
         private global::System.Data.DataRelation relationFK_Name;
         
@@ -85,8 +85,8 @@ namespace DataBaseProject {
                 if ((ds.Tables["Drink1"] != null)) {
                     base.Tables.Add(new Drink1DataTable(ds.Tables["Drink1"]));
                 }
-                if ((ds.Tables["MasterGridViewSelectCommand"] != null)) {
-                    base.Tables.Add(new MasterGridViewSelectCommandDataTable(ds.Tables["MasterGridViewSelectCommand"]));
+                if ((ds.Tables["DataTable1"] != null)) {
+                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -160,9 +160,9 @@ namespace DataBaseProject {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MasterGridViewSelectCommandDataTable MasterGridViewSelectCommand {
+        public DataTable1DataTable DataTable1 {
             get {
-                return this.tableMasterGridViewSelectCommand;
+                return this.tableDataTable1;
             }
         }
         
@@ -248,8 +248,8 @@ namespace DataBaseProject {
                 if ((ds.Tables["Drink1"] != null)) {
                     base.Tables.Add(new Drink1DataTable(ds.Tables["Drink1"]));
                 }
-                if ((ds.Tables["MasterGridViewSelectCommand"] != null)) {
-                    base.Tables.Add(new MasterGridViewSelectCommandDataTable(ds.Tables["MasterGridViewSelectCommand"]));
+                if ((ds.Tables["DataTable1"] != null)) {
+                    base.Tables.Add(new DataTable1DataTable(ds.Tables["DataTable1"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -314,10 +314,10 @@ namespace DataBaseProject {
                     this.tableDrink1.InitVars();
                 }
             }
-            this.tableMasterGridViewSelectCommand = ((MasterGridViewSelectCommandDataTable)(base.Tables["MasterGridViewSelectCommand"]));
+            this.tableDataTable1 = ((DataTable1DataTable)(base.Tables["DataTable1"]));
             if ((initTable == true)) {
-                if ((this.tableMasterGridViewSelectCommand != null)) {
-                    this.tableMasterGridViewSelectCommand.InitVars();
+                if ((this.tableDataTable1 != null)) {
+                    this.tableDataTable1.InitVars();
                 }
             }
             this.relationFK_Name = this.Relations["FK_Name"];
@@ -343,8 +343,8 @@ namespace DataBaseProject {
             base.Tables.Add(this.tableOrderRecord);
             this.tableDrink1 = new Drink1DataTable();
             base.Tables.Add(this.tableDrink1);
-            this.tableMasterGridViewSelectCommand = new MasterGridViewSelectCommandDataTable();
-            base.Tables.Add(this.tableMasterGridViewSelectCommand);
+            this.tableDataTable1 = new DataTable1DataTable();
+            base.Tables.Add(this.tableDataTable1);
             this.relationFK_Name = new global::System.Data.DataRelation("FK_Name", new global::System.Data.DataColumn[] {
                         this.tableDrink.ENNameColumn}, new global::System.Data.DataColumn[] {
                         this.tableHas.FKNameColumn}, false);
@@ -391,7 +391,7 @@ namespace DataBaseProject {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeMasterGridViewSelectCommand() {
+        private bool ShouldSerializeDataTable1() {
             return false;
         }
         
@@ -466,7 +466,7 @@ namespace DataBaseProject {
         public delegate void Drink1RowChangeEventHandler(object sender, Drink1RowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void MasterGridViewSelectCommandRowChangeEventHandler(object sender, MasterGridViewSelectCommandRowChangeEvent e);
+        public delegate void DataTable1RowChangeEventHandler(object sender, DataTable1RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1969,7 +1969,7 @@ namespace DataBaseProject {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MasterGridViewSelectCommandDataTable : global::System.Data.TypedTableBase<MasterGridViewSelectCommandRow> {
+        public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
             private global::System.Data.DataColumn columnFKAccount;
             
@@ -1977,7 +1977,7 @@ namespace DataBaseProject {
             
             private global::System.Data.DataColumn columnPS;
             
-            private global::System.Data.DataColumn columnDeliveryState;
+            private global::System.Data.DataColumn columnMakeState;
             
             private global::System.Data.DataColumn columnName;
             
@@ -1987,8 +1987,8 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandDataTable() {
-                this.TableName = "MasterGridViewSelectCommand";
+            public DataTable1DataTable() {
+                this.TableName = "DataTable1";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1996,7 +1996,7 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MasterGridViewSelectCommandDataTable(global::System.Data.DataTable table) {
+            internal DataTable1DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -2013,7 +2013,7 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected MasterGridViewSelectCommandDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -2044,9 +2044,9 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DeliveryStateColumn {
+            public global::System.Data.DataColumn MakeStateColumn {
                 get {
-                    return this.columnDeliveryState;
+                    return this.columnMakeState;
                 }
             }
             
@@ -2085,51 +2085,51 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandRow this[int index] {
+            public DataTable1Row this[int index] {
                 get {
-                    return ((MasterGridViewSelectCommandRow)(this.Rows[index]));
+                    return ((DataTable1Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MasterGridViewSelectCommandRowChangeEventHandler MasterGridViewSelectCommandRowChanging;
+            public event DataTable1RowChangeEventHandler DataTable1RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MasterGridViewSelectCommandRowChangeEventHandler MasterGridViewSelectCommandRowChanged;
+            public event DataTable1RowChangeEventHandler DataTable1RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MasterGridViewSelectCommandRowChangeEventHandler MasterGridViewSelectCommandRowDeleting;
+            public event DataTable1RowChangeEventHandler DataTable1RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MasterGridViewSelectCommandRowChangeEventHandler MasterGridViewSelectCommandRowDeleted;
+            public event DataTable1RowChangeEventHandler DataTable1RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddMasterGridViewSelectCommandRow(MasterGridViewSelectCommandRow row) {
+            public void AddDataTable1Row(DataTable1Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandRow AddMasterGridViewSelectCommandRow(string FKAccount, System.DateTime ConfirmDate, string PS, bool DeliveryState, string Name, int Quantity, int Total) {
-                MasterGridViewSelectCommandRow rowMasterGridViewSelectCommandRow = ((MasterGridViewSelectCommandRow)(this.NewRow()));
+            public DataTable1Row AddDataTable1Row(string FKAccount, System.DateTime ConfirmDate, string PS, bool MakeState, string Name, int Quantity, int Total) {
+                DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FKAccount,
                         ConfirmDate,
                         PS,
-                        DeliveryState,
+                        MakeState,
                         Name,
                         Quantity,
                         Total};
-                rowMasterGridViewSelectCommandRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMasterGridViewSelectCommandRow);
-                return rowMasterGridViewSelectCommandRow;
+                rowDataTable1Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDataTable1Row);
+                return rowDataTable1Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MasterGridViewSelectCommandDataTable cln = ((MasterGridViewSelectCommandDataTable)(base.Clone()));
+                DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -2137,7 +2137,7 @@ namespace DataBaseProject {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MasterGridViewSelectCommandDataTable();
+                return new DataTable1DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2146,7 +2146,7 @@ namespace DataBaseProject {
                 this.columnFKAccount = base.Columns["FKAccount"];
                 this.columnConfirmDate = base.Columns["ConfirmDate"];
                 this.columnPS = base.Columns["PS"];
-                this.columnDeliveryState = base.Columns["DeliveryState"];
+                this.columnMakeState = base.Columns["MakeState"];
                 this.columnName = base.Columns["Name"];
                 this.columnQuantity = base.Columns["Quantity"];
                 this.columnTotal = base.Columns["Total"];
@@ -2161,8 +2161,8 @@ namespace DataBaseProject {
                 base.Columns.Add(this.columnConfirmDate);
                 this.columnPS = new global::System.Data.DataColumn("PS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPS);
-                this.columnDeliveryState = new global::System.Data.DataColumn("DeliveryState", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDeliveryState);
+                this.columnMakeState = new global::System.Data.DataColumn("MakeState", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMakeState);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2173,7 +2173,7 @@ namespace DataBaseProject {
                 this.columnFKAccount.MaxLength = 10;
                 this.columnPS.AllowDBNull = false;
                 this.columnPS.MaxLength = 200;
-                this.columnDeliveryState.AllowDBNull = false;
+                this.columnMakeState.AllowDBNull = false;
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 10;
                 this.columnQuantity.AllowDBNull = false;
@@ -2182,28 +2182,28 @@ namespace DataBaseProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandRow NewMasterGridViewSelectCommandRow() {
-                return ((MasterGridViewSelectCommandRow)(this.NewRow()));
+            public DataTable1Row NewDataTable1Row() {
+                return ((DataTable1Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MasterGridViewSelectCommandRow(builder);
+                return new DataTable1Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MasterGridViewSelectCommandRow);
+                return typeof(DataTable1Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MasterGridViewSelectCommandRowChanged != null)) {
-                    this.MasterGridViewSelectCommandRowChanged(this, new MasterGridViewSelectCommandRowChangeEvent(((MasterGridViewSelectCommandRow)(e.Row)), e.Action));
+                if ((this.DataTable1RowChanged != null)) {
+                    this.DataTable1RowChanged(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2211,8 +2211,8 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MasterGridViewSelectCommandRowChanging != null)) {
-                    this.MasterGridViewSelectCommandRowChanging(this, new MasterGridViewSelectCommandRowChangeEvent(((MasterGridViewSelectCommandRow)(e.Row)), e.Action));
+                if ((this.DataTable1RowChanging != null)) {
+                    this.DataTable1RowChanging(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2220,8 +2220,8 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MasterGridViewSelectCommandRowDeleted != null)) {
-                    this.MasterGridViewSelectCommandRowDeleted(this, new MasterGridViewSelectCommandRowChangeEvent(((MasterGridViewSelectCommandRow)(e.Row)), e.Action));
+                if ((this.DataTable1RowDeleted != null)) {
+                    this.DataTable1RowDeleted(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
                 }
             }
             
@@ -2229,14 +2229,14 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MasterGridViewSelectCommandRowDeleting != null)) {
-                    this.MasterGridViewSelectCommandRowDeleting(this, new MasterGridViewSelectCommandRowChangeEvent(((MasterGridViewSelectCommandRow)(e.Row)), e.Action));
+                if ((this.DataTable1RowDeleting != null)) {
+                    this.DataTable1RowDeleting(this, new DataTable1RowChangeEvent(((DataTable1Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveMasterGridViewSelectCommandRow(MasterGridViewSelectCommandRow row) {
+            public void RemoveDataTable1Row(DataTable1Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -2263,7 +2263,7 @@ namespace DataBaseProject {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MasterGridViewSelectCommandDataTable";
+                attribute2.FixedValue = "DataTable1DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2725,25 +2725,25 @@ namespace DataBaseProject {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MasterGridViewSelectCommandRow : global::System.Data.DataRow {
+        public partial class DataTable1Row : global::System.Data.DataRow {
             
-            private MasterGridViewSelectCommandDataTable tableMasterGridViewSelectCommand;
+            private DataTable1DataTable tableDataTable1;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MasterGridViewSelectCommandRow(global::System.Data.DataRowBuilder rb) : 
+            internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMasterGridViewSelectCommand = ((MasterGridViewSelectCommandDataTable)(this.Table));
+                this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FKAccount {
                 get {
-                    return ((string)(this[this.tableMasterGridViewSelectCommand.FKAccountColumn]));
+                    return ((string)(this[this.tableDataTable1.FKAccountColumn]));
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.FKAccountColumn] = value;
+                    this[this.tableDataTable1.FKAccountColumn] = value;
                 }
             }
             
@@ -2752,15 +2752,14 @@ namespace DataBaseProject {
             public System.DateTime ConfirmDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMasterGridViewSelectCommand.ConfirmDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableDataTable1.ConfirmDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ConfirmDate\' in table \'MasterGridViewSelectCommand\' is DBNu" +
-                                "ll.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ConfirmDate\' in table \'DataTable1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.ConfirmDateColumn] = value;
+                    this[this.tableDataTable1.ConfirmDateColumn] = value;
                 }
             }
             
@@ -2768,21 +2767,21 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PS {
                 get {
-                    return ((string)(this[this.tableMasterGridViewSelectCommand.PSColumn]));
+                    return ((string)(this[this.tableDataTable1.PSColumn]));
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.PSColumn] = value;
+                    this[this.tableDataTable1.PSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool DeliveryState {
+            public bool MakeState {
                 get {
-                    return ((bool)(this[this.tableMasterGridViewSelectCommand.DeliveryStateColumn]));
+                    return ((bool)(this[this.tableDataTable1.MakeStateColumn]));
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.DeliveryStateColumn] = value;
+                    this[this.tableDataTable1.MakeStateColumn] = value;
                 }
             }
             
@@ -2790,10 +2789,10 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Name {
                 get {
-                    return ((string)(this[this.tableMasterGridViewSelectCommand.NameColumn]));
+                    return ((string)(this[this.tableDataTable1.NameColumn]));
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.NameColumn] = value;
+                    this[this.tableDataTable1.NameColumn] = value;
                 }
             }
             
@@ -2801,10 +2800,10 @@ namespace DataBaseProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int Quantity {
                 get {
-                    return ((int)(this[this.tableMasterGridViewSelectCommand.QuantityColumn]));
+                    return ((int)(this[this.tableDataTable1.QuantityColumn]));
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.QuantityColumn] = value;
+                    this[this.tableDataTable1.QuantityColumn] = value;
                 }
             }
             
@@ -2813,39 +2812,39 @@ namespace DataBaseProject {
             public int Total {
                 get {
                     try {
-                        return ((int)(this[this.tableMasterGridViewSelectCommand.TotalColumn]));
+                        return ((int)(this[this.tableDataTable1.TotalColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'MasterGridViewSelectCommand\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Total\' in table \'DataTable1\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMasterGridViewSelectCommand.TotalColumn] = value;
+                    this[this.tableDataTable1.TotalColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsConfirmDateNull() {
-                return this.IsNull(this.tableMasterGridViewSelectCommand.ConfirmDateColumn);
+                return this.IsNull(this.tableDataTable1.ConfirmDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetConfirmDateNull() {
-                this[this.tableMasterGridViewSelectCommand.ConfirmDateColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable1.ConfirmDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTotalNull() {
-                return this.IsNull(this.tableMasterGridViewSelectCommand.TotalColumn);
+                return this.IsNull(this.tableDataTable1.TotalColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTotalNull() {
-                this[this.tableMasterGridViewSelectCommand.TotalColumn] = global::System.Convert.DBNull;
+                this[this.tableDataTable1.TotalColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3023,22 +3022,22 @@ namespace DataBaseProject {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class MasterGridViewSelectCommandRowChangeEvent : global::System.EventArgs {
+        public class DataTable1RowChangeEvent : global::System.EventArgs {
             
-            private MasterGridViewSelectCommandRow eventRow;
+            private DataTable1Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandRowChangeEvent(MasterGridViewSelectCommandRow row, global::System.Data.DataRowAction action) {
+            public DataTable1RowChangeEvent(DataTable1Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MasterGridViewSelectCommandRow Row {
+            public DataTable1Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -4641,7 +4640,7 @@ SELECT Oid, ConfirmState, ConfirmDate, DeliveryState, PS, FKAccount FROM OrderRe
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class MasterGridViewSelectCommandTableAdapter : global::System.ComponentModel.Component {
+    public partial class DataTable1TableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -4655,7 +4654,7 @@ SELECT Oid, ConfirmState, ConfirmDate, DeliveryState, PS, FKAccount FROM OrderRe
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MasterGridViewSelectCommandTableAdapter() {
+        public DataTable1TableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4752,11 +4751,11 @@ SELECT Oid, ConfirmState, ConfirmDate, DeliveryState, PS, FKAccount FROM OrderRe
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "MasterGridViewSelectCommand";
+            tableMapping.DataSetTable = "DataTable1";
             tableMapping.ColumnMappings.Add("FKAccount", "FKAccount");
             tableMapping.ColumnMappings.Add("ConfirmDate", "ConfirmDate");
             tableMapping.ColumnMappings.Add("PS", "PS");
-            tableMapping.ColumnMappings.Add("DeliveryState", "DeliveryState");
+            tableMapping.ColumnMappings.Add("MakeState", "MakeState");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Quantity", "Quantity");
             tableMapping.ColumnMappings.Add("Total", "Total");
@@ -4776,16 +4775,23 @@ SELECT Oid, ConfirmState, ConfirmDate, DeliveryState, PS, FKAccount FROM OrderRe
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.MasterGridViewSelectCommand";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = @"SELECT        OrderRecord.FKAccount, OrderRecord.ConfirmDate, OrderRecord.PS, Has.MakeState, Drink.Name, Has.Quantity, ttt.Total
+FROM            Drink INNER JOIN
+                         Has ON Drink.ENName = Has.FKName INNER JOIN
+                         OrderRecord ON Has.FKOid = OrderRecord.Oid INNER JOIN
+                             (SELECT        FKOid AS UFKOid, Total
+                               FROM            (SELECT        Has_1.FKOid, SUM(Has_1.Quantity * Drink_1.Price) AS Total
+                                                         FROM            Has AS Has_1 INNER JOIN
+                                                                                   Drink AS Drink_1 ON Has_1.FKName = Drink_1.ENName
+                                                         GROUP BY Has_1.FKOid) AS subquery) AS ttt ON OrderRecord.Oid = ttt.UFKOid";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NTUT_DataBaseDataSet.MasterGridViewSelectCommandDataTable dataTable) {
+        public virtual int Fill(NTUT_DataBaseDataSet.DataTable1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4798,9 +4804,9 @@ SELECT Oid, ConfirmState, ConfirmDate, DeliveryState, PS, FKAccount FROM OrderRe
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NTUT_DataBaseDataSet.MasterGridViewSelectCommandDataTable GetData() {
+        public virtual NTUT_DataBaseDataSet.DataTable1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            NTUT_DataBaseDataSet.MasterGridViewSelectCommandDataTable dataTable = new NTUT_DataBaseDataSet.MasterGridViewSelectCommandDataTable();
+            NTUT_DataBaseDataSet.DataTable1DataTable dataTable = new NTUT_DataBaseDataSet.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
