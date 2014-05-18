@@ -66,7 +66,7 @@ namespace DataBaseProject.Forms
 
         private void OnOrderRecordItemMouseUp(object sender, MouseButtonEventArgs e)
         {
-
+            PageSwitcher.Switch(new OrderListForm());
         }
     }
 }
