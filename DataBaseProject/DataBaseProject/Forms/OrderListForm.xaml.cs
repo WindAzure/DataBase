@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Xpf.Editors.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +58,14 @@ namespace DataBaseProject.Forms
         private void ClickCloseButton(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void ColumnsPopulatedGridControl(object sender, RoutedEventArgs e)
+        {
+            foreach (var column in _orderListGrid.Columns)
+            {
+                column.ActualEditSettings.HorizontalContentAlignment = EditSettingsHorizontalAlignment.Center;
+            }
         }
     }
 }
