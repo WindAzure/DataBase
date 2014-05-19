@@ -101,7 +101,7 @@ namespace DataBaseProject.Forms
                 SqlCommand command2 = new SqlCommand("SELECT count(*) FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount inner join [dbo].[Has] ON Oid=FKOid inner join [dbo].[Drink] ON FKName=ENName WHERE Account='" + PageSwitcher._account + "' and ConfirmState='false' and ENName='appleJuice'", connection);
                 if (!Convert.ToBoolean(command2.ExecuteScalar()))
                 {
-                    SqlCommand command3 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity]) VALUES (('appleJuice'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'))", connection);
+                    SqlCommand command3 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity],[MakeState]) VALUES (('appleJuice'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'),('false'))", connection);
                     command3.ExecuteScalar();
                 }
             }
