@@ -32,8 +32,13 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0">
-                <Controls:DrinkLogo Grid.Column="0" Width="500" Height="300" Margin="300,50,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/Special.png"/>
-                <Controls:DrinkLogo Grid.Column="1" Width="500" Height="300" Margin="600,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/Recommend.png"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Controls:DrinkLogo Grid.Column="0" Width="450" Height="250" Margin="230,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" OnItemMouseUp="OnSpecialOfferImageMouseUp" ImagePath="/Image/Special.png"/>
+                <Controls:DrinkLogo Grid.Column="1" Width="450" Height="250" Margin="0,0,130,0" HorizontalAlignment="Center" VerticalAlignment="Center" OnItemMouseUp="OnRecommendImageMouseUp" ImagePath="/Image/Recommend.png"/>
             </Grid>
 
             <Grid Grid.Row="1">
