@@ -90,7 +90,7 @@
 
                         <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,30,0,0">
                             <TextBlock Text="飲品需求及意見" Width="160" Height="30" Padding="10,0,0,0" Background="Black" FontSize="20" Foreground="White"/>
-                            <TextBox Width="300" Height="200" Margin="0,30,0,0" x:Name="_psTextBox" TextChanged="ChangedPsTextBoxText"/>
+                            <TextBox Width="300" Height="200" Margin="0,30,0,0" x:Name="_psTextBox" TextChanged="ChangedPsTextBoxText" TextWrapping="Wrap"/>
                             <TextBlock x:Name="_totalPrice" Text="總價：" Margin="50,30,0,0" HorizontalAlignment="Left" Padding="5,0,5,0" Background="Black" FontSize="20" Foreground="White"/>
                         </StackPanel>
                     </Grid>
