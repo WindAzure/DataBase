@@ -26,7 +26,7 @@ namespace DataBaseProject.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=114.32.25.79,1433;Initial Catalog=NTUT_DataBase;Persist Security Info" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=1.34.139.73,1433;Initial Catalog=NTUT_DataBase;Persist Security Info" +
             "=True;User ID=TeamMember;Password=TeamMember")]
         public string NTUT_DataBaseConnectionString {
             get {

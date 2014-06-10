@@ -109,7 +109,7 @@ namespace DataBaseProject.Forms
             {
                 SqlCommand command4 = new SqlCommand("INSERT INTO [dbo].[OrderRecord] ([Oid],[ConfirmState],[ConfirmDate],[DeliveryState],[PS],[FKAccount]) VALUES (NEWID(),'false',NULL,'false','','" + PageSwitcher._account + "')", connection);
                 command4.ExecuteScalar();
-                SqlCommand command5 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity]) VALUES (('appleJuice'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'))", connection);
+                SqlCommand command5 = new SqlCommand("INSERT INTO [dbo].[Has] ([FKName],[FKOid],[Quantity],[MakeState]) VALUES (('appleJuice'), (SELECT [Oid] FROM [dbo].[Member] inner join [dbo].[OrderRecord] ON Account=FKAccount WHERE ConfirmState='false' and Account='" + PageSwitcher._account + "' ),('1'),('false'))", connection);
                 command5.ExecuteScalar();
             }
             connection.Close();
